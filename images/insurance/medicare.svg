@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#fff"/>
+  <rect x="8" y="8" width="6" height="44" fill="#CC0000"/>
+  <rect x="18" y="8" width="6" height="44" fill="#003594"/>
+  <text x="36" y="26" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#003594">Medicare</text>
+  <text x="36" y="44" font-family="Arial,sans-serif" font-size="11" fill="#CC0000">U.S. Federal Program</text>
+</svg>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Mind & Metabolism | Psychiatric Care in Lakewood, WA</title>
+  <meta name="description" content="Meet Dr. Elizabeth Calfos, DNP, PMHNP-BC — a board-certified psychiatric nurse practitioner offering telehealth mental health care across Washington State." />
+  <link rel="canonical" href="https://mindmetab.com/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green:#2d5f4f; --green-light:#e8f0ed; --green-mid:#3d7a64; --cream:#faf8f5; --text:#1a1a1a; --muted:#5c6370; --border:#e5e5e5; --radius:12px; --radius-lg:20px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.7; color: var(--text); background: #fff; -webkit-font-smoothing: antialiased; }
+    a { color: var(--green); text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    @media (max-width: 900px) { .nav-links-about { display: none !important; } }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; border-radius: 8px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: transform 0.28s ease, opacity 0.28s ease; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 900px) { .hamburger { display: flex; } }
+
+    /* Mobile Nav */
+    .mobile-nav { position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: #fff; z-index: 98; display: flex; flex-direction: column; overflow-y: auto; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s; }
+    .mobile-nav.open { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 0.22s ease, transform 0.22s ease; }
+    .mobile-nav-links { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #e5e5e5; }
+    .mobile-nav-links a { font-size: 19px; font-weight: 500; color: #1a1a1a; padding: 16px 28px; text-decoration: none; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; }
+    .mobile-nav-links a:last-child { border-bottom: none; }
+    .mobile-nav-links a::after { content: ''; }
+    .mobile-nav-footer { padding: 28px 24px 40px; display: flex; flex-direction: column; gap: 12px; }
+    .mobile-nav-footer .btn-mobile-cta { display: block; text-align: center; background: #2d5f4f; color: #fff; font-size: 16px; font-weight: 600; padding: 16px; border-radius: 100px; text-decoration: none; }
+    .mobile-nav-footer .btn-mobile-phone { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; color: #5c6370; text-decoration: none; padding: 8px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; border: none; text-decoration: none; transition: all .2s ease; }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: var(--green-mid); }
+    .btn-white { background: #fff; color: var(--green); }
+
+    /* Page header */
+    .page-hero { background: var(--cream); padding: 80px 0; text-align: center; }
+    .page-hero .label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(40px, 5vw, 64px); line-height: 1.15; margin-bottom: 20px; }
+    .page-hero h1 em { font-style: italic; color: var(--green); }
+    .page-hero p { font-size: 19px; color: var(--muted); max-width: 600px; margin: 0 auto; }
+
+    /* Content */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 80px 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 3.5vw, 44px); line-height: 1.15; margin-bottom: 20px; }
+    h2 em { font-style: italic; color: var(--green); }
+    h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    p { color: var(--muted); margin-bottom: 18px; }
+    .label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+
+    /* Two-col layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .two-col.reverse { direction: rtl; }
+    .two-col.reverse > * { direction: ltr; }
+
+    /* Provider feature */
+    .provider-photo { width: 100%; border-radius: var(--radius-lg); object-fit: cover; object-position: center 20%; height: 480px; }
+
+    /* Values grid */
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .value-card { background: var(--cream); border-radius: var(--radius); padding: 32px 28px; }
+    .value-icon { width: 44px; height: 44px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .value-card p { font-size: 15px; margin: 0; }
+
+    /* Mission/Vision callouts */
+    .callout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+    .callout { border-left: 4px solid var(--green); padding: 28px 32px; background: var(--green-light); border-radius: 0 var(--radius) var(--radius) 0; }
+    .callout h3 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .callout p { color: var(--text); font-size: 16px; line-height: 1.65; margin: 0; }
+
+    /* CTA */
+    .cta-band { background: var(--green); padding: 80px 0; text-align: center; }
+    .cta-band h2 { color: #fff; margin-bottom: 16px; }
+    .cta-band p { color: rgba(255,255,255,0.8); font-size: 18px; max-width: 520px; margin: 0 auto 32px; }
+
+    /* Footer */
+    footer { background: #111; color: rgba(255,255,255,0.5); padding: 40px 0; text-align: center; font-size: 14px; }
+    footer a { color: rgba(255,255,255,0.5); transition: color .15s; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .two-col.reverse { direction: ltr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .callout-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .section { padding: 56px 0; }
+      .values-grid { grid-template-columns: 1fr; }
+      .provider-photo { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="text-decoration:none;">
+      <img src="images/logo.jpeg" alt="Mind & Metabolism Wellness Clinic" style="height:48px;width:auto;display:block;" />
+    </a>
+    <ul class="nav-links-about" style="display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;">
+      <li><a href="/#services" style="font-size:15px;color:#5c6370;font-weight:450;text-decoration:none;">Services</a></li>
+      <li><a href="/#provider" style="font-size:15px;color:#5c6370;font-weight:450;text-decoration:none;">Our Provider</a></li>
+      <li><a href="/#insurance" style="font-size:15px;color:#5c6370;font-weight:450;text-decoration:none;">Insurance</a></li>
+      <li><a href="/#resources" style="font-size:15px;color:#5c6370;font-weight:450;text-decoration:none;">Resources</a></li>
+      <li><a href="/#contact" style="font-size:15px;color:#5c6370;font-weight:450;text-decoration:none;">Contact</a></li>
+    </ul>
+    <a href="https://care.headway.co/providers/elizabeth-calfos" target="_blank" class="btn btn-primary">Request Care</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav-links">
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/#provider">Our Provider</a>
+    <a href="/#insurance">Insurance</a>
+    <a href="/#reviews">Reviews</a>
+    <a href="/#resources">Resources</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <div class="mobile-nav-footer">
+    <a href="https://care.headway.co/providers/elizabeth-calfos" target="_blank" class="btn-mobile-cta">Request Care Now</a>
+    <a href="tel:2535255536" class="btn-mobile-phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (253) 525-5536
+    </a>
+  </div>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <span class="label">About our practice</span>
+    <h1>Healing happens <em>from the inside.</em></h1>
+    <p>You shouldn't have to fight to get good mental health care. We're here to make it easier.</p>
+  </div>
+</div>
+
+<!-- Who We Are -->
+<section class="section">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;">
+      <span class="label">Who we are</span>
+      <h2>A practice built around <em>you.</em></h2>
+      <p>Mind &amp; Metabolism Wellness Clinic is a behavioral health practice in Lakewood, WA. We see teens and adults, either in person at our clinic or by telehealth anywhere in Washington State.</p>
+      <p>We treat depression, anxiety, bipolar disorder, ADHD, PTSD, and other psychiatric conditions. But we don't stop at the diagnosis. We look at your whole picture: your sleep, your stress, your lifestyle. Because all of it affects how you feel.</p>
+      <p>When you come to us, you'll have time. You'll be heard. And you'll leave with a plan that was built for you, not copied from a template.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;text-align:center;">
+      <span class="label">What drives us</span>
+      <h2>What we're here to do</h2>
+      <p style="font-size:18px;">We built this practice because finding good mental health care shouldn't be a struggle. It should be personal, accessible, and actually work.</p>
+    </div>
+    <div class="callout-grid" style="margin-top:48px;">
+      <div class="callout">
+        <h3>Our Mission</h3>
+        <p>To provide mental health care that is personal, accessible, and actually works. We want every patient to feel heard, understood, and supported from the very first visit.</p>
+      </div>
+      <div class="callout">
+        <h3>Our Vision</h3>
+        <p>A Washington State where anyone who needs mental health support can actually get it, close to home or from the comfort of their own home, without long waits or unnecessary barriers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meet Elizabeth -->
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <img src="images/elizabeth-calfos.jpg" alt="Dr. Elizabeth Calfos, DNP, PMHNP-BC" class="provider-photo" />
+      </div>
+      <div>
+        <span class="label">Our provider</span>
+        <h2>Dr. Elizabeth Calfos, <em>DNP, PMHNP-BC</em></h2>
+        <p>Dr. Calfos is a board-certified psychiatric nurse practitioner with a Doctor of Nursing Practice from George Washington University. She founded Mind &amp; Metabolism because she believed patients deserved better than rushed appointments and generic care plans.</p>
+        <p>She treats depression, anxiety, bipolar disorder, ADHD, PTSD, schizophrenia, sleep disorders, and more. She works with teens and adults and offers both medication management and therapy.</p>
+        <p>She will ask questions other providers skip. She takes time to understand your full story before recommending anything. And she works with you every step of the way.</p>
+        <p style="font-style:italic;color:var(--text);font-size:18px;border-left:3px solid var(--green);padding-left:20px;margin-top:32px;">"Sound mental health positively impacts every other aspect of daily life. That's what we're working toward together."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto;">
+      <span class="label">How we work</span>
+      <h2>What you can expect <em>from us</em></h2>
+      <p>These aren't words on a wall. They're how we show up for every patient, every visit.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Care that fits you</h3>
+        <p>Your care plan is built around you, not a template. We take time to understand your history, your goals, and what's actually going on before we recommend anything.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>You're part of the team</h3>
+        <p>We work with you, not at you. We explain everything, ask what you want, and make decisions together. Your voice matters here.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Accessible to everyone</h3>
+        <p>We accept most major insurance plans and offer telehealth across Washington State. Whether you're in Lakewood or across the state, we can help.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>We look at the whole picture</h3>
+        <p>Your mental health doesn't exist in a vacuum. Sleep, hormones, stress, and lifestyle all play a role. We look at all of it so we can actually help you feel better.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>No judgement.</h3>
+        <p>You can be honest with us. Whatever you're going through, this is a safe space to talk. We're not here to judge you, and we take that seriously.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h3>Getting you to your best</h3>
+        <p>We're not just trying to make you feel okay. We want you to feel like yourself again, stable, clear-headed, and able to live the life you want.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to take the first step?</h2>
+    <p>We serve teens and adults in Lakewood, WA and across Washington State. Telehealth and in-person appointments available. Most insurance accepted.</p>
+    <a href="https://care.headway.co/providers/elizabeth-calfos" target="_blank" class="btn btn-white">Request Care Now</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Mind &amp; Metabolism LLC. All rights reserved. &nbsp;&middot;&nbsp;
+      <a href="/">Home</a> &nbsp;&middot;&nbsp;
+      <a href="privacy-policy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+      <a href="notice-of-privacy-practices.html">Notice of Privacy Practices</a> &nbsp;&middot;&nbsp;
+      <a href="terms-of-use.html">Terms of Use</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.setAttribute('aria-hidden', !isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
