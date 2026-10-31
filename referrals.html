@@ -1,720 +1,718 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refer a Patient | Mind & Metabolism: Psychiatric Partner for Washington Providers</title>
-  <meta name="description" content="Refer your patient to Mind & Metabolism. Board-certified PMHNP serving AFH residents and outpatient patients across Washington State. WA Medicaid accepted. Patient contact within 24 hours." />
-  <link rel="canonical" href="https://mindmetab.com/referrals.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green:#2d5f4f; --green-light:#e8f0ed; --green-mid:#3d7a64;
-      --cream:#faf8f5; --text:#1a1a1a; --muted:#5c6370;
-      --border:#e5e5e5; --radius:12px; --radius-lg:20px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.7; color: var(--text); background: #fff; -webkit-font-smoothing: antialiased; }
-    a { color: var(--green); text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.15; }
-    p { color: var(--muted); }
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refer a Patient | Mind &amp; Metabolism: Psychiatric Partner for Washington Providers</title>
+<meta name="description" content="Refer your patient to Mind &amp; Metabolism. Board-certified PMHNP serving AFH residents and outpatient patients across Washington State. WA Medicaid accepted. Patient contact within 24 hours.">
+<link rel="canonical" href="https://mindmetab.com/referrals.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;450;500;600&amp;display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--green:#2d5f4f; --green-light:#e8f0ed; --green-mid:#3d7a64;
+--cream:#faf8f5; --text:#1a1a1a; --muted:#5c6370;
+--border:#e5e5e5; --radius:12px; --radius-lg:20px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.7; color: var(--text); background: #fff; -webkit-font-smoothing: antialiased; }
+a { color: var(--green); text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: 'DM Serif Display', serif; line-height: 1.15; }
+p { color: var(--muted); }
 
-    /* Nav */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
-    .nav-logo-mark { width: 36px; height: 36px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; color: #fff; font-size: 18px; flex-shrink: 0; }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-    .nav-logo-text strong { font-size: 15px; font-weight: 600; color: var(--text); }
-    .nav-logo-text span { font-size: 11px; color: var(--muted); }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .15s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; border: none; text-decoration: none; transition: all .2s ease; white-space: nowrap; }
-    .btn-primary { background: var(--green); color: #fff; }
-    .btn-primary:hover { background: var(--green-mid); }
-    .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
-    .btn-outline:hover { background: var(--green-light); }
-    .btn-white { background: #fff; color: var(--green); }
-    .btn-white:hover { background: var(--cream); }
-    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; border-radius: 8px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: transform 0.28s ease, opacity 0.28s ease; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    @media (max-width: 900px) { .nav-links { display: none !important; } .hamburger { display: flex; } }
-    .mobile-nav { position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: #fff; z-index: 98; display: flex; flex-direction: column; overflow-y: auto; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s; }
-    .mobile-nav.open { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 0.22s ease, transform 0.22s ease; }
-    .mobile-nav-links { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #e5e5e5; }
-    .mobile-nav-links a { font-size: 19px; font-weight: 500; color: #1a1a1a; padding: 16px 28px; text-decoration: none; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; }
-    .mobile-nav-links a:last-child { border-bottom: none; }
-    .mobile-nav-footer { padding: 28px 24px 40px; display: flex; flex-direction: column; gap: 12px; }
-    .mobile-nav-footer .btn-mobile-cta { display: block; text-align: center; background: #2d5f4f; color: #fff; font-size: 16px; font-weight: 600; padding: 16px; border-radius: 100px; text-decoration: none; }
-    .mobile-nav-footer .btn-mobile-phone { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; color: #5c6370; text-decoration: none; padding: 8px; }
+/* Nav */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.nav-logo-mark { width: 36px; height: 36px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; color: #fff; font-size: 18px; flex-shrink: 0; }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.nav-logo-text strong { font-size: 15px; font-weight: 600; color: var(--text); }
+.nav-logo-text span { font-size: 11px; color: var(--muted); }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .15s; }
+.nav-links a:hover { color: var(--text); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; border: none; text-decoration: none; transition: all .2s ease; white-space: nowrap; }
+.btn-primary { background: var(--green); color: #fff; }
+.btn-primary:hover { background: var(--green-mid); }
+.btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+.btn-outline:hover { background: var(--green-light); }
+.btn-white { background: #fff; color: var(--green); }
+.btn-white:hover { background: var(--cream); }
+.hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; border-radius: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: transform 0.28s ease, opacity 0.28s ease; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 900px) { .nav-links { display: none !important; } .hamburger { display: flex; } }
+.mobile-nav { position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: #fff; z-index: 98; display: flex; flex-direction: column; overflow-y: auto; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s; }
+.mobile-nav.open { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 0.22s ease, transform 0.22s ease; }
+.mobile-nav-links { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #e5e5e5; }
+.mobile-nav-links a { font-size: 19px; font-weight: 500; color: #1a1a1a; padding: 16px 28px; text-decoration: none; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; }
+.mobile-nav-links a:last-child { border-bottom: none; }
+.mobile-nav-footer { padding: 28px 24px 40px; display: flex; flex-direction: column; gap: 12px; }
+.mobile-nav-footer .btn-mobile-cta { display: block; text-align: center; background: #2d5f4f; color: #fff; font-size: 16px; font-weight: 600; padding: 16px; border-radius: 100px; text-decoration: none; }
+.mobile-nav-footer .btn-mobile-phone { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; color: #5c6370; text-decoration: none; padding: 8px; }
 
-    /* Label */
-    .label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-    .section { padding: 96px 0; }
+/* Label */
+.label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.section { padding: 96px 0; }
 
-    /* Hero */
-    .hero {
-      background: var(--green);
-      padding: 96px 0 80px;
-    }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .hero-content .label { color: rgba(255,255,255,0.6); }
-    .hero-content h1 { font-size: clamp(40px, 5vw, 60px); color: #fff; margin-bottom: 20px; }
-    .hero-content h1 em { font-style: italic; color: rgba(255,255,255,0.8); }
-    .hero-content > p { font-size: 18px; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 480px; }
-    .hero-promise {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .hero-promise-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,0.85);
-      font-size: 15px;
-    }
-    .hero-promise-item svg { flex-shrink: 0; }
-    .hero-card {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      backdrop-filter: blur(8px);
-    }
-    .hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
-    .hero-card-stat { margin-bottom: 28px; }
-    .hero-card-stat-number { font-family: 'DM Serif Display', serif; font-size: 48px; color: #fff; line-height: 1; margin-bottom: 4px; }
-    .hero-card-stat-label { font-size: 14px; color: rgba(255,255,255,0.65); }
-    .hero-card-divider { height: 1px; background: rgba(255,255,255,0.15); margin: 24px 0; }
-    .hero-card-detail { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
-    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-card { display: none; } }
+/* Hero */
+.hero {
+background: var(--green);
+padding: 96px 0 80px;
+}
+.hero-inner {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px;
+align-items: center;
+}
+.hero-content .label { color: rgba(255,255,255,0.6); }
+.hero-content h1 { font-size: clamp(40px, 5vw, 60px); color: #fff; margin-bottom: 20px; }
+.hero-content h1 em { font-style: italic; color: rgba(255,255,255,0.8); }
+.hero-content > p { font-size: 18px; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 480px; }
+.hero-promise {
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+.hero-promise-item {
+display: flex;
+align-items: center;
+gap: 12px;
+color: rgba(255,255,255,0.85);
+font-size: 15px;
+}
+.hero-promise-item svg { flex-shrink: 0; }
+.hero-card {
+background: rgba(255,255,255,0.1);
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: var(--radius-lg);
+padding: 40px;
+backdrop-filter: blur(8px);
+}
+.hero-card-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+.hero-card-stat { margin-bottom: 28px; }
+.hero-card-stat-number { font-family: 'DM Serif Display', serif; font-size: 48px; color: #fff; line-height: 1; margin-bottom: 4px; }
+.hero-card-stat-label { font-size: 14px; color: rgba(255,255,255,0.65); }
+.hero-card-divider { height: 1px; background: rgba(255,255,255,0.15); margin: 24px 0; }
+.hero-card-detail { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+@media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-card { display: none; } }
 
-    /* Who we serve */
-    .serve-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 56px;
-    }
-    .serve-card {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-    }
-    .serve-card-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--green-light);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-    .serve-card h3 { font-size: 22px; margin-bottom: 12px; color: var(--text); }
-    .serve-card p { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
-    .serve-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .serve-card ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); }
-    .serve-card ul li::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
-    @media (max-width: 700px) { .serve-grid { grid-template-columns: 1fr; } }
+/* Who we serve */
+.serve-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 32px;
+margin-top: 56px;
+}
+.serve-card {
+background: var(--cream);
+border: 1px solid var(--border);
+border-radius: var(--radius-lg);
+padding: 40px;
+}
+.serve-card-icon {
+width: 52px;
+height: 52px;
+background: var(--green-light);
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+font-size: 24px;
+}
+.serve-card h3 { font-size: 22px; margin-bottom: 12px; color: var(--text); }
+.serve-card p { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
+.serve-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.serve-card ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); }
+.serve-card ul li::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
+@media (max-width: 700px) { .serve-grid { grid-template-columns: 1fr; } }
 
-    /* Insurance */
-    .insurance { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 0; }
-    .insurance-header { text-align: center; margin-bottom: 48px; }
-    .insurance-header h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 12px; }
-    .insurance-header p { max-width: 560px; margin: 0 auto; }
-    .insurance-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .insurance-group-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
-    .insurance-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .insurance-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 8px 16px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    .insurance-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
-    .insurance-pill .dot-pending { background: #f59e0b; }
-    @media (max-width: 700px) { .insurance-groups { grid-template-columns: 1fr; } }
+/* Insurance */
+.insurance { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 0; }
+.insurance-header { text-align: center; margin-bottom: 48px; }
+.insurance-header h2 { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 12px; }
+.insurance-header p { max-width: 560px; margin: 0 auto; }
+.insurance-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.insurance-group-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+.insurance-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.insurance-pill {
+display: flex;
+align-items: center;
+gap: 8px;
+background: #fff;
+border: 1px solid var(--border);
+border-radius: 100px;
+padding: 8px 16px;
+font-size: 13px;
+font-weight: 500;
+color: var(--text);
+}
+.insurance-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
+.insurance-pill .dot-pending { background: #f59e0b; }
+@media (max-width: 700px) { .insurance-groups { grid-template-columns: 1fr; } }
 
-    /* Process */
-    .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
-    .process-step { position: relative; }
-    .process-step-number {
-      width: 44px;
-      height: 44px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 20px;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .process-step h3 { font-size: 18px; margin-bottom: 10px; color: var(--text); }
-    .process-step p { font-size: 15px; color: var(--muted); }
-    .process-connector { position: absolute; top: 22px; left: calc(100% - 16px); width: calc(100% - 28px); height: 1px; background: var(--border); z-index: 0; }
-    .process-step:last-child .process-connector { display: none; }
-    @media (max-width: 700px) { .process-steps { grid-template-columns: 1fr; } .process-connector { display: none; } }
+/* Process */
+.process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+.process-step { position: relative; }
+.process-step-number {
+width: 44px;
+height: 44px;
+background: var(--green);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'DM Serif Display', serif;
+font-size: 20px;
+color: #fff;
+margin-bottom: 20px;
+}
+.process-step h3 { font-size: 18px; margin-bottom: 10px; color: var(--text); }
+.process-step p { font-size: 15px; color: var(--muted); }
+.process-connector { position: absolute; top: 22px; left: calc(100% - 16px); width: calc(100% - 28px); height: 1px; background: var(--border); z-index: 0; }
+.process-step:last-child .process-connector { display: none; }
+@media (max-width: 700px) { .process-steps { grid-template-columns: 1fr; } .process-connector { display: none; } }
 
-    /* Promise bar */
-    .promise-bar {
-      background: var(--green);
-      padding: 28px 0;
-    }
-    .promise-bar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .promise-bar-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,0.9);
-      font-size: 15px;
-      font-weight: 500;
-    }
+/* Promise bar */
+.promise-bar {
+background: var(--green);
+padding: 28px 0;
+}
+.promise-bar-inner {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 48px;
+flex-wrap: wrap;
+}
+.promise-bar-item {
+display: flex;
+align-items: center;
+gap: 12px;
+color: rgba(255,255,255,0.9);
+font-size: 15px;
+font-weight: 500;
+}
 
-    /* Provider */
-    .provider-section { background: var(--cream); border-top: 1px solid var(--border); padding: 80px 0; }
-    .provider-inner {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 56px;
-      align-items: start;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .provider-photo { width: 160px; height: 160px; border-radius: var(--radius-lg); object-fit: cover; object-position: top; flex-shrink: 0; }
-    .provider-name { font-size: 28px; color: var(--text); margin-bottom: 4px; }
-    .provider-cred { font-size: 14px; font-weight: 600; color: var(--green); letter-spacing: .03em; margin-bottom: 16px; }
-    .provider-bio { font-size: 16px; color: var(--muted); margin-bottom: 20px; }
-    .provider-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .provider-tag { background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; font-size: 13px; color: var(--muted); }
-    @media (max-width: 700px) { .provider-inner { grid-template-columns: 1fr; } .provider-photo { width: 120px; height: 120px; } }
+/* Provider */
+.provider-section { background: var(--cream); border-top: 1px solid var(--border); padding: 80px 0; }
+.provider-inner {
+display: grid;
+grid-template-columns: auto 1fr;
+gap: 56px;
+align-items: start;
+max-width: 860px;
+margin: 0 auto;
+}
+.provider-photo { width: 160px; height: 160px; border-radius: var(--radius-lg); object-fit: cover; object-position: top; flex-shrink: 0; }
+.provider-name { font-size: 28px; color: var(--text); margin-bottom: 4px; }
+.provider-cred { font-size: 14px; font-weight: 600; color: var(--green); letter-spacing: .03em; margin-bottom: 16px; }
+.provider-bio { font-size: 16px; color: var(--muted); margin-bottom: 20px; }
+.provider-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.provider-tag { background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; font-size: 13px; color: var(--muted); }
+@media (max-width: 700px) { .provider-inner { grid-template-columns: 1fr; } .provider-photo { width: 120px; height: 120px; } }
 
-    /* Form */
-    .form-section { padding: 96px 0; }
-    .form-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .form-left h2 { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 16px; }
-    .form-left > p { font-size: 17px; color: var(--muted); margin-bottom: 32px; }
-    .form-contact-item { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--muted); margin-bottom: 14px; }
-    .form-contact-item a { color: var(--text); font-weight: 500; }
-    .form-divider { height: 1px; background: var(--border); margin: 28px 0; }
-    .form-direct-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-    .form-direct-note { font-size: 14px; color: var(--muted); }
-    .form-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px; }
-    .form-box h3 { font-size: 20px; color: var(--text); margin-bottom: 6px; }
-    .form-box > p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
-    .form-fields { display: flex; flex-direction: column; gap: 18px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .field-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .field-group input, .field-group select, .field-group textarea {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      outline: none;
-      transition: border-color .2s;
-      background: #fff;
-      color: var(--text);
-    }
-    .field-group input:focus, .field-group select:focus, .field-group textarea:focus { border-color: var(--green); }
-    .field-group textarea { resize: vertical; }
-    .form-section-heading { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-    .form-disclaimer { font-size: 12px; color: var(--muted); line-height: 1.6; }
-    .form-btn { width: 100%; justify-content: center; font-size: 15px; padding: 14px; }
-    @media (max-width: 800px) { .form-inner { grid-template-columns: 1fr; gap: 48px; } .form-row { grid-template-columns: 1fr; } }
+/* Form */
+.form-section { padding: 96px 0; }
+.form-inner {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 80px;
+align-items: start;
+max-width: 960px;
+margin: 0 auto;
+}
+.form-left h2 { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 16px; }
+.form-left > p { font-size: 17px; color: var(--muted); margin-bottom: 32px; }
+.form-contact-item { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--muted); margin-bottom: 14px; }
+.form-contact-item a { color: var(--text); font-weight: 500; }
+.form-divider { height: 1px; background: var(--border); margin: 28px 0; }
+.form-direct-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.form-direct-note { font-size: 14px; color: var(--muted); }
+.form-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px; }
+.form-box h3 { font-size: 20px; color: var(--text); margin-bottom: 6px; }
+.form-box > p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+.form-fields { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.field-group input, .field-group select, .field-group textarea {
+width: 100%;
+padding: 11px 14px;
+border: 1.5px solid var(--border);
+border-radius: var(--radius);
+font-size: 14px;
+font-family: 'Inter', sans-serif;
+outline: none;
+transition: border-color .2s;
+background: #fff;
+color: var(--text);
+}
+.field-group input:focus, .field-group select:focus, .field-group textarea:focus { border-color: var(--green); }
+.field-group textarea { resize: vertical; }
+.form-section-heading { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.form-disclaimer { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.form-btn { width: 100%; justify-content: center; font-size: 15px; padding: 14px; }
+@media (max-width: 800px) { .form-inner { grid-template-columns: 1fr; gap: 48px; } .form-row { grid-template-columns: 1fr; } }
 
-    /* Footer */
-    footer { background: var(--text); padding: 60px 0 40px; }
-    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px; line-height: 1.7; }
-    .nav-logo-mark-footer { background: rgba(255,255,255,0.12); }
-    footer h4 { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
-    footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    footer ul li a { font-size: 14px; color: rgba(255,255,255,0.65); transition: color .15s; }
-    footer ul li a:hover { color: #fff; }
-    .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .footer-bottom p, .footer-bottom a { font-size: 13px; color: rgba(255,255,255,0.35); }
-    .footer-bottom div { display: flex; gap: 24px; }
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } }
+/* Footer */
+footer { background: var(--text); padding: 60px 0 40px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px; line-height: 1.7; }
+.nav-logo-mark-footer { background: rgba(255,255,255,0.12); }
+footer h4 { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+footer ul li a { font-size: 14px; color: rgba(255,255,255,0.65); transition: color .15s; }
+footer ul li a:hover { color: #fff; }
+.footer-bottom { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-bottom p, .footer-bottom a { font-size: 13px; color: rgba(255,255,255,0.35); }
+.footer-bottom div { display: flex; gap: 24px; }
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } }
 
-    /* Success */
-    #form-success { display: none; text-align: center; padding: 40px 0; }
-  </style>
+/* Success */
+#form-success { display: none; text-align: center; padding: 40px 0; }
+</style>
 </head>
 <body>
 
 <!-- Nav -->
 <nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.jpeg" alt="Mind & Metabolism Wellness Clinic" style="height:48px;width:auto;display:block;" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#insurance">Insurance</a></li>
-      <li><a href="index.html#provider">Our Provider</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="index.html#contact" class="btn btn-outline" style="font-size:14px;padding:10px 20px;">Patient Inquiry</a>
-      <a href="#referral-form" class="btn btn-primary" style="font-size:14px;padding:10px 20px;">Submit a Referral</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-    <div class="mobile-nav-links">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#insurance">Insurance</a>
-      <a href="index.html#provider">Our Provider</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="#referral-form" class="btn-mobile-cta">Submit a Referral</a>
-      <a href="tel:2535255536" class="btn-mobile-phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (253) 525-5536
-      </a>
-    </div>
-  </div>
+<div class="nav-inner">
+<a href="index.html" class="nav-logo">
+<img src="images/logo.jpeg" alt="Mind &amp; Metabolism Wellness Clinic" style="height:48px;width:auto;display:block;">
+</a>
+<ul class="nav-links">
+<li><a href="index.html#services">Services</a></li>
+<li><a href="index.html#insurance">Insurance</a></li>
+<li><a href="index.html#provider">Our Provider</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="index.html#contact" class="btn btn-outline" style="font-size:14px;padding:10px 20px;">Patient Inquiry</a>
+<a href="#referral-form" class="btn btn-primary" style="font-size:14px;padding:10px 20px;">Submit a Referral</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+<div class="mobile-nav-links">
+<a href="index.html#services">Services</a>
+<a href="index.html#insurance">Insurance</a>
+<a href="index.html#provider">Our Provider</a>
+<a href="index.html#contact">Contact</a>
+</div>
+<div class="mobile-nav-footer">
+<a href="#referral-form" class="btn-mobile-cta">Submit a Referral</a>
+<a href="tel:2535255536" class="btn-mobile-phone">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+(253) 525-5536
+</a>
+</div>
+</div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <span class="label">For Providers & Partners</span>
-        <h1>A psychiatric partner your patients can <em>count on.</em></h1>
-        <p>Mind & Metabolism provides outpatient psychiatric care for Adult Family Home residents and community patients across Washington State. Board-certified. WA Medicaid accepted. Patient contact within 24 hours.</p>
-        <div class="hero-promise">
-          <div class="hero-promise-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            WA Medicaid MCOs accepted, including Coordinated Care, Molina, CHPW, and Wellpoint
-          </div>
-          <div class="hero-promise-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Patient contacted within 24 hours of referral submission
-          </div>
-          <div class="hero-promise-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Telehealth statewide, no transportation barrier
-          </div>
-          <div class="hero-promise-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            You are notified when your patient is scheduled
-          </div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Practice at a glance</div>
-        <div class="hero-card-stat">
-          <div class="hero-card-stat-number">24h</div>
-          <div class="hero-card-stat-label">Patient contact guarantee</div>
-        </div>
-        <div class="hero-card-divider"></div>
-        <div class="hero-card-detail">
-          <strong style="color:#fff;display:block;margin-bottom:8px;">Elizabeth Calfos, DNP, PMHNP-BC</strong>
-          Doctor of Nursing Practice · Board-Certified Psychiatric Mental Health NP · George Washington University
-        </div>
-        <div class="hero-card-divider"></div>
-        <div class="hero-card-detail">
-          Psychiatric evaluation · Medication management · Ongoing care coordination · Telehealth statewide
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="hero-inner">
+<div class="hero-content">
+<span class="label">For Providers &amp; Partners</span>
+<h1>A psychiatric partner your patients can <em>count on.</em></h1>
+<p>Mind &amp; Metabolism provides outpatient psychiatric care for Adult Family Home residents and community patients across Washington State. Board-certified. WA Medicaid accepted. Patient contact within 24 hours.</p>
+<div class="hero-promise">
+<div class="hero-promise-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+WA Medicaid MCOs accepted, including Coordinated Care, Molina, CHPW, and Wellpoint
+</div>
+<div class="hero-promise-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+Patient contacted within 24 hours of referral submission
+</div>
+<div class="hero-promise-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+Telehealth statewide, no transportation barrier
+</div>
+<div class="hero-promise-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+You are notified when your patient is scheduled
+</div>
+</div>
+</div>
+<div class="hero-card">
+<div class="hero-card-label">Practice at a glance</div>
+<div class="hero-card-stat">
+<div class="hero-card-stat-number">24h</div>
+<div class="hero-card-stat-label">Patient contact guarantee</div>
+</div>
+<div class="hero-card-divider"></div>
+<div class="hero-card-detail">
+<strong style="color:#fff;display:block;margin-bottom:8px;">Elizabeth Calfos, DNP, PMHNP-BC</strong>
+Doctor of Nursing Practice &middot; Board-Certified Psychiatric Mental Health NP &middot; George Washington University
+</div>
+<div class="hero-card-divider"></div>
+<div class="hero-card-detail">
+Psychiatric evaluation &middot; Medication management &middot; Ongoing care coordination &middot; Telehealth statewide
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Promise bar -->
 <div class="promise-bar">
-  <div class="container">
-    <div class="promise-bar-inner">
-      <div class="promise-bar-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Most new patients seen within the week
-      </div>
-      <div class="promise-bar-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (253) 525-5536
-      </div>
-      <div class="promise-bar-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        info@mindmetab.com
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="promise-bar-inner">
+<div class="promise-bar-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+Most new patients seen within the week
+</div>
+<div class="promise-bar-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+(253) 525-5536
+</div>
+<div class="promise-bar-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+info@mindmetab.com
+</div>
+</div>
+</div>
 </div>
 
 <!-- Who we serve -->
 <section class="section">
-  <div class="container">
-    <span class="label">Who we serve</span>
-    <h2 style="font-size:clamp(30px,4vw,44px);max-width:600px;">Built for the two referral sources that matter most.</h2>
-    <div class="serve-grid">
-      <div class="serve-card">
-        <div class="serve-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Adult Family Home Owners & Managers</h3>
-        <p>Your residents deserve consistent psychiatric care without the transportation barriers or long wait times that come with most outpatient practices. We built this practice with AFH residents in mind.</p>
-        <ul>
-          <li>WA Medicaid MCOs accepted, including Coordinated Care, Molina, CHPW, and Wellpoint</li>
-          <li>Telehealth visits directly in the home, with home visits available when needed</li>
-          <li>Psychiatric evaluation, medication management, and ongoing monitoring</li>
-          <li>One dedicated provider, no rotating clinicians or handoffs</li>
-          <li>Compliant with CBHS program requirements under supported living</li>
-        </ul>
-      </div>
-      <div class="serve-card">
-        <div class="serve-card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Primary Care Providers</h3>
-        <p>When your patient needs psychiatric expertise beyond what you can manage in a primary care visit, we're the specialist you can send them to with confidence. We keep you in the loop.</p>
-        <ul>
-          <li>Most major commercial insurance accepted, including Aetna, Blue Cross Blue Shield, Regence, Cigna, UHC, Premera, and Medicare</li>
-          <li>Psychiatric evaluation and diagnosis for complex presentations</li>
-          <li>Medication management for depression, anxiety, ADHD, PTSD, bipolar, and more</li>
-          <li>Telehealth from your patient's home, with higher show rates than in-person specialty</li>
-          <li>Referring provider notified when patient is scheduled and seen</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<span class="label">Who we serve</span>
+<h2 style="font-size:clamp(30px,4vw,44px);max-width:600px;">Built for the two referral sources that matter most.</h2>
+<div class="serve-grid">
+<div class="serve-card">
+<div class="serve-card-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+</div>
+<h3>Adult Family Home Owners &amp; Managers</h3>
+<p>Your residents deserve consistent psychiatric care without the transportation barriers or long wait times that come with most outpatient practices. We built this practice with AFH residents in mind.</p>
+<ul>
+<li>WA Medicaid MCOs accepted, including Coordinated Care, Molina, CHPW, and Wellpoint</li>
+<li>Telehealth visits directly in the home, with home visits available when needed</li>
+<li>Psychiatric evaluation, medication management, and ongoing monitoring</li>
+<li>One dedicated provider, no rotating clinicians or handoffs</li>
+<li>Compliant with CBHS program requirements under supported living</li>
+</ul>
+</div>
+<div class="serve-card">
+<div class="serve-card-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<h3>Primary Care Providers</h3>
+<p>When your patient needs psychiatric expertise beyond what you can manage in a primary care visit, we're the specialist you can send them to with confidence. We keep you in the loop.</p>
+<ul>
+<li>Most major commercial insurance accepted, including Aetna, Blue Cross Blue Shield, Regence, Cigna, UHC, Premera, and Medicare</li>
+<li>Psychiatric evaluation and diagnosis for complex presentations</li>
+<li>Medication management for depression, anxiety, ADHD, PTSD, bipolar, and more</li>
+<li>Telehealth from your patient's home, with higher show rates than in-person specialty</li>
+<li>Referring provider notified when patient is scheduled and seen</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Insurance -->
 <div class="insurance">
-  <div class="container">
-    <div class="insurance-header">
-      <span class="label">Insurance accepted</span>
-      <h2>WA Medicaid and most major commercial plans.</h2>
-      <p>We accept the insurance plans your patients are most likely to carry. If you're unsure whether a specific patient is covered, call us and we'll verify before you submit the referral.</p>
-    </div>
-    <div class="insurance-groups">
-      <div>
-        <div class="insurance-group-label">WA Medicaid (Apple Health) MCOs</div>
-        <div class="insurance-pills">
-          <div class="insurance-pill"><span class="dot"></span>Washington Medicaid (ProviderOne)</div>
-          <div class="insurance-pill"><span class="dot"></span>Coordinated Care of WA / Ambetter</div>
-          <div class="insurance-pill"><span class="dot"></span>Molina Healthcare of Washington</div>
-          <div class="insurance-pill"><span class="dot"></span>Wellpoint / Amerigroup WA</div>
-          <div class="insurance-pill"><span class="dot"></span>Community Health Plan of WA (CHPW)</div>
-        </div>
-      </div>
-      <div>
-        <div class="insurance-group-label">Commercial & Medicare</div>
-        <div class="insurance-pills">
-          <div class="insurance-pill"><span class="dot"></span>Medicare</div>
-          <div class="insurance-pill"><span class="dot"></span>Aetna</div>
-          <div class="insurance-pill"><span class="dot"></span>UnitedHealthcare / Optum</div>
-          <div class="insurance-pill"><span class="dot"></span>Cigna / Evernorth</div>
-          <div class="insurance-pill"><span class="dot"></span>Premera Blue Cross / LifeWise</div>
-          <div class="insurance-pill"><span class="dot"></span>Regence BlueShield</div>
-          <div class="insurance-pill"><span class="dot"></span>Blue Cross Blue Shield</div>
-        </div>
-      </div>
-    </div>
-    <p style="margin-top:32px;font-size:14px;color:var(--muted);text-align:center;">Not sure? Call us at <a href="tel:2535255536" style="color:var(--green);font-weight:500;">(253) 525-5536</a> and we'll verify coverage before the referral is submitted.</p>
-  </div>
+<div class="container">
+<div class="insurance-header">
+<span class="label">Insurance accepted</span>
+<h2>WA Medicaid and most major commercial plans.</h2>
+<p>We accept the insurance plans your patients are most likely to carry. If you're unsure whether a specific patient is covered, call us and we'll verify before you submit the referral.</p>
+</div>
+<div class="insurance-groups">
+<div>
+<div class="insurance-group-label">WA Medicaid (Apple Health) MCOs</div>
+<div class="insurance-pills">
+<div class="insurance-pill"><span class="dot"></span>Washington Medicaid (ProviderOne)</div>
+<div class="insurance-pill"><span class="dot"></span>Coordinated Care of WA / Ambetter</div>
+<div class="insurance-pill"><span class="dot"></span>Molina Healthcare of Washington</div>
+<div class="insurance-pill"><span class="dot"></span>Wellpoint / Amerigroup WA</div>
+<div class="insurance-pill"><span class="dot"></span>Community Health Plan of WA (CHPW)</div>
+</div>
+</div>
+<div>
+<div class="insurance-group-label">Commercial &amp; Medicare</div>
+<div class="insurance-pills">
+<div class="insurance-pill"><span class="dot"></span>Medicare</div>
+<div class="insurance-pill"><span class="dot"></span>Aetna</div>
+<div class="insurance-pill"><span class="dot"></span>UnitedHealthcare / Optum</div>
+<div class="insurance-pill"><span class="dot"></span>Cigna / Evernorth</div>
+<div class="insurance-pill"><span class="dot"></span>Premera Blue Cross / LifeWise</div>
+<div class="insurance-pill"><span class="dot"></span>Regence BlueShield</div>
+<div class="insurance-pill"><span class="dot"></span>Blue Cross Blue Shield</div>
+</div>
+</div>
+</div>
+<p style="margin-top:32px;font-size:14px;color:var(--muted);text-align:center;">Not sure? Call us at <a href="tel:2535255536" style="color:var(--green);font-weight:500;">(253) 525-5536</a> and we'll verify coverage before the referral is submitted.</p>
+</div>
 </div>
 
 <!-- Process -->
 <section class="section">
-  <div class="container">
-    <span class="label">How it works</span>
-    <h2 style="font-size:clamp(30px,4vw,44px);margin-bottom:12px;">Simple referral. Fast follow-through.</h2>
-    <p style="max-width:540px;">We designed the referral process to be as light as possible on your end. Submit the form, and we take it from there.</p>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="process-step-number">1</div>
-        <div class="process-connector"></div>
-        <h3>Submit the referral</h3>
-        <p>Fill out the referral form below with the patient's basic information and reason for referral. Takes under 2 minutes.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">2</div>
-        <div class="process-connector"></div>
-        <h3>We contact the patient</h3>
-        <p>Within 24 hours of receiving your referral, a member of our intake team contacts the patient directly to schedule their evaluation.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">3</div>
-        <h3>You're kept in the loop</h3>
-        <p>You receive confirmation once the patient is scheduled. From there, Elizabeth manages their psychiatric care and keeps you informed on significant changes.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<span class="label">How it works</span>
+<h2 style="font-size:clamp(30px,4vw,44px);margin-bottom:12px;">Simple referral. Fast follow-through.</h2>
+<p style="max-width:540px;">We designed the referral process to be as light as possible on your end. Submit the form, and we take it from there.</p>
+<div class="process-steps">
+<div class="process-step">
+<div class="process-step-number">1</div>
+<div class="process-connector"></div>
+<h3>Submit the referral</h3>
+<p>Fill out the referral form below with the patient's basic information and reason for referral. Takes under 2 minutes.</p>
+</div>
+<div class="process-step">
+<div class="process-step-number">2</div>
+<div class="process-connector"></div>
+<h3>We contact the patient</h3>
+<p>Within 24 hours of receiving your referral, a member of our intake team contacts the patient directly to schedule their evaluation.</p>
+</div>
+<div class="process-step">
+<div class="process-step-number">3</div>
+<h3>You're kept in the loop</h3>
+<p>You receive confirmation once the patient is scheduled. From there, Elizabeth manages their psychiatric care and keeps you informed on significant changes.</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Provider -->
 <div class="provider-section">
-  <div class="container">
-    <div class="provider-inner">
-      <img src="images/elizabeth-calfos.jpg" alt="Elizabeth Calfos, DNP, PMHNP-BC" class="provider-photo" />
-      <div>
-        <span class="label">Your referring provider</span>
-        <h2 class="provider-name">Elizabeth Calfos</h2>
-        <div class="provider-cred">DNP, PMHNP-BC · Psychiatric Mental Health Nurse Practitioner</div>
-        <p class="provider-bio">Elizabeth holds a Doctor of Nursing Practice from George Washington University and is Board-Certified in Psychiatric Mental Health. She conducts comprehensive psychiatric evaluations, manages medications for a full range of psychiatric conditions, and provides consistent long-term care for each patient she takes on. She takes time with every patient. Your referral will not be processed, it will be treated.</p>
-        <div class="provider-tags">
-          <span class="provider-tag">Psychiatric Evaluation</span>
-          <span class="provider-tag">Medication Management</span>
-          <span class="provider-tag">Depression</span>
-          <span class="provider-tag">Anxiety & Panic</span>
-          <span class="provider-tag">ADHD</span>
-          <span class="provider-tag">PTSD</span>
-          <span class="provider-tag">Bipolar Disorder</span>
-          <span class="provider-tag">Schizophrenia</span>
-          <span class="provider-tag">Dementia & Cognitive Decline</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="provider-inner">
+<img src="images/elizabeth-calfos.jpg" alt="Elizabeth Calfos, DNP, PMHNP-BC" class="provider-photo">
+<div>
+<span class="label">Your referring provider</span>
+<h2 class="provider-name">Elizabeth Calfos</h2>
+<div class="provider-cred">DNP, PMHNP-BC &middot; Psychiatric Mental Health Nurse Practitioner</div>
+<p class="provider-bio">Elizabeth holds a Doctor of Nursing Practice from George Washington University and is Board-Certified in Psychiatric Mental Health. She conducts comprehensive psychiatric evaluations, manages medications for a full range of psychiatric conditions, and provides consistent long-term care for each patient she takes on. She takes time with every patient. Your referral will not be processed, it will be treated.</p>
+<div class="provider-tags">
+<span class="provider-tag">Psychiatric Evaluation</span>
+<span class="provider-tag">Medication Management</span>
+<span class="provider-tag">Depression</span>
+<span class="provider-tag">Anxiety &amp; Panic</span>
+<span class="provider-tag">ADHD</span>
+<span class="provider-tag">PTSD</span>
+<span class="provider-tag">Bipolar Disorder</span>
+<span class="provider-tag">Schizophrenia</span>
+<span class="provider-tag">Dementia &amp; Cognitive Decline</span>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Referral Form -->
 <section class="form-section" id="referral-form">
-  <div class="container">
-    <div class="form-inner">
-      <div class="form-left">
-        <span class="label">Submit a referral</span>
-        <h2>Ready to refer? We'll take it from here.</h2>
-        <p>Fill out the form and we'll contact your patient within 24 hours to schedule their intake appointment.</p>
-        <div class="form-contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="tel:2535255536">(253) 525-5536</a>
-        </div>
-        <div class="form-contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:info@mindmetab.com">info@mindmetab.com</a>
-        </div>
-        <div class="form-contact-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Mon–Fri, 9 am – 5 pm</span>
-        </div>
-        <div class="form-divider"></div>
-        <div class="form-direct-label">Prefer to call?</div>
-        <div class="form-direct-note">You can also refer a patient by calling our office directly at <a href="tel:2535255536" style="color:var(--green);font-weight:500;">(253) 525-5536</a>. We answer Mon–Fri, 9am–5pm.</div>
-      </div>
-      <div class="form-box">
-        <h3>Patient Referral Form</h3>
-        <p>All fields marked with * are required. Patient information is handled in accordance with HIPAA.</p>
-        <form action="https://formspree.io/f/mpqevydl" method="POST" id="referral-form-el">
-          <div class="form-fields">
-            <div class="form-section-heading">Referring Provider</div>
-            <div class="form-row">
-              <div class="field-group">
-                <label>Your Name *</label>
-                <input type="text" name="provider_name" required placeholder="Dr. Jane Smith" />
-              </div>
-              <div class="field-group">
-                <label>Organization / Practice *</label>
-                <input type="text" name="organization" required placeholder="Clinic or AFH name" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field-group">
-                <label>Your Phone *</label>
-                <input type="tel" name="provider_phone" required placeholder="Best number to reach you" />
-              </div>
-              <div class="field-group">
-                <label>Your Email</label>
-                <input type="email" name="provider_email" placeholder="For referral confirmation" />
-              </div>
-            </div>
-            <div class="form-section-heading" style="margin-top:8px;">Patient Information</div>
-            <div class="form-row">
-              <div class="field-group">
-                <label>Patient Name *</label>
-                <input type="text" name="patient_name" required placeholder="First and last name" />
-              </div>
-              <div class="field-group">
-                <label>Date of Birth *</label>
-                <input type="text" name="patient_dob" required placeholder="MM/DD/YYYY" />
-              </div>
-            </div>
-            <div class="field-group">
-              <label>Patient Insurance *</label>
-              <select name="patient_insurance" required>
-                <option value="">Select insurance plan</option>
-                <optgroup label="WA Medicaid (Apple Health)">
-                  <option>Washington Medicaid (ProviderOne)</option>
-                  <option>Coordinated Care of Washington / Ambetter</option>
-                  <option>Molina Healthcare of Washington</option>
-                  <option>Wellpoint / Amerigroup WA</option>
-                  <option>Community Health Plan of Washington (CHPW)</option>
-                </optgroup>
-                <optgroup label="Commercial & Medicare">
-                  <option>Medicare</option>
-                  <option>Aetna</option>
-                  <option>UnitedHealthcare / Optum</option>
-                  <option>Cigna / Evernorth</option>
-                  <option>Premera Blue Cross / LifeWise</option>
-                  <option>Regence BlueShield</option>
-                  <option>Blue Cross Blue Shield</option>
-                  <option>Other</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Patient Phone Number *</label>
-              <input type="tel" name="patient_phone" required placeholder="Best number to reach patient" />
-            </div>
-            <div class="field-group">
-              <label>Reason for Referral / Chief Complaint *</label>
-              <textarea name="reason" rows="3" required placeholder="Presenting concern, diagnosis, what you need evaluated or managed"></textarea>
-            </div>
-            <div class="field-group">
-              <label>Urgency</label>
-              <select name="urgency">
-                <option value="Routine">Routine (within 1-2 weeks)</option>
-                <option value="Urgent">Urgent (within 2-3 business days)</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Additional Notes <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
-              <textarea name="notes" rows="2" placeholder="Anything else we should know before contacting the patient"></textarea>
-            </div>
-            <p class="form-disclaimer">Patient information submitted here is used solely to coordinate care and is handled in compliance with HIPAA. This form is not for medical emergencies. If your patient is in crisis, call 911 or direct them to call or text 988.</p>
-            <button type="submit" class="btn btn-primary form-btn">Submit Referral</button>
-          </div>
-        </form>
-        <div id="form-success">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--text);margin-bottom:8px;">Referral received.</h3>
-          <p style="color:var(--muted);">We'll contact your patient within 24 hours to schedule their intake appointment. You'll receive a confirmation once they're scheduled.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="form-inner">
+<div class="form-left">
+<span class="label">Submit a referral</span>
+<h2>Ready to refer? We'll take it from here.</h2>
+<p>Fill out the form and we'll contact your patient within 24 hours to schedule their intake appointment.</p>
+<div class="form-contact-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+<a href="tel:2535255536">(253) 525-5536</a>
+</div>
+<div class="form-contact-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<a href="mailto:info@mindmetab.com">info@mindmetab.com</a>
+</div>
+<div class="form-contact-item">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+<span>Mon&ndash;Fri, 9 am &ndash; 5 pm</span>
+</div>
+<div class="form-divider"></div>
+<div class="form-direct-label">Prefer to call?</div>
+<div class="form-direct-note">You can also refer a patient by calling our office directly at <a href="tel:2535255536" style="color:var(--green);font-weight:500;">(253) 525-5536</a>. We answer Mon&ndash;Fri, 9am&ndash;5pm.</div>
+</div>
+<div class="form-box">
+<h3>Patient Referral Form</h3>
+<p>All fields marked with * are required. Patient information is handled in accordance with HIPAA.</p>
+<form action="https://formspree.io/f/mpqevydl" method="POST" id="referral-form-el">
+<div class="form-fields">
+<div class="form-section-heading">Referring Provider</div>
+<div class="form-row">
+<div class="field-group">
+<label>Your Name *</label>
+<input type="text" name="provider_name" required placeholder="Dr. Jane Smith">
+</div>
+<div class="field-group">
+<label>Organization / Practice *</label>
+<input type="text" name="organization" required placeholder="Clinic or AFH name">
+</div>
+</div>
+<div class="form-row">
+<div class="field-group">
+<label>Your Phone *</label>
+<input type="tel" name="provider_phone" required placeholder="Best number to reach you">
+</div>
+<div class="field-group">
+<label>Your Email</label>
+<input type="email" name="provider_email" placeholder="For referral confirmation">
+</div>
+</div>
+<div class="form-section-heading" style="margin-top:8px;">Patient Information</div>
+<div class="form-row">
+<div class="field-group">
+<label>Patient Name *</label>
+<input type="text" name="patient_name" required placeholder="First and last name">
+</div>
+<div class="field-group">
+<label>Date of Birth *</label>
+<input type="text" name="patient_dob" required placeholder="MM/DD/YYYY">
+</div>
+</div>
+<div class="field-group">
+<label>Patient Insurance *</label>
+<select name="patient_insurance" required>
+<option value="">Select insurance plan</option>
+<optgroup label="WA Medicaid (Apple Health)">
+<option>Washington Medicaid (ProviderOne)</option>
+<option>Coordinated Care of Washington / Ambetter</option>
+<option>Molina Healthcare of Washington</option>
+<option>Wellpoint / Amerigroup WA</option>
+<option>Community Health Plan of Washington (CHPW)</option>
+</optgroup>
+<optgroup label="Commercial &amp; Medicare">
+<option>Medicare</option>
+<option>Aetna</option>
+<option>UnitedHealthcare / Optum</option>
+<option>Cigna / Evernorth</option>
+<option>Premera Blue Cross / LifeWise</option>
+<option>Regence BlueShield</option>
+<option>Blue Cross Blue Shield</option>
+<option>Other</option>
+</optgroup>
+</select>
+</div>
+<div class="field-group">
+<label>Patient Phone Number *</label>
+<input type="tel" name="patient_phone" required placeholder="Best number to reach patient">
+</div>
+<div class="field-group">
+<label>Reason for Referral / Chief Complaint *</label>
+<textarea name="reason" rows="3" required placeholder="Presenting concern, diagnosis, what you need evaluated or managed"></textarea>
+</div>
+<div class="field-group">
+<label>Urgency</label>
+<select name="urgency">
+<option value="Routine">Routine (within 1-2 weeks)</option>
+<option value="Urgent">Urgent (within 2-3 business days)</option>
+</select>
+</div>
+<div class="field-group">
+<label>Additional Notes <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+<textarea name="notes" rows="2" placeholder="Anything else we should know before contacting the patient"></textarea>
+</div>
+<p class="form-disclaimer">Patient information submitted here is used solely to coordinate care and is handled in compliance with HIPAA. This form is not for medical emergencies. If your patient is in crisis, call 911 or direct them to call or text 988.</p>
+<button type="submit" class="btn btn-primary form-btn">Submit Referral</button>
+</div>
+</form>
+<div id="form-success">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+<h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--text);margin-bottom:8px;">Referral received.</h3>
+<p style="color:var(--muted);">We'll contact your patient within 24 hours to schedule their intake appointment. You'll receive a confirmation once they're scheduled.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="images/logo.jpeg" alt="Mind & Metabolism" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1);opacity:0.85;" />
-        <p>Outpatient psychiatric care for Washington State. Telehealth statewide and in-person in Lakewood, WA. WA Medicaid and most major insurance accepted.</p>
-      </div>
-      <div>
-        <h4>For Providers</h4>
-        <ul>
-          <li><a href="#referral-form">Submit a Referral</a></li>
-          <li><a href="#who-we-serve">Who We Serve</a></li>
-          <li><a href="#insurance">Insurance</a></li>
-          <li><a href="mailto:info@mindmetab.com">Contact Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>For Patients</h4>
-        <ul>
-          <li><a href="index.html">Homepage</a></li>
-          <li><a href="index.html#services">What We Treat</a></li>
-          <li><a href="https://care.headway.co/providers/elizabeth-calfos" target="_blank">Request Care</a></li>
-          <li><a href="index.html#insurance">Insurance</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:2535255536">(253) 525-5536</a></li>
-          <li><a href="mailto:info@mindmetab.com">info@mindmetab.com</a></li>
-        </ul>
-        <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;">Mon–Fri: 9 am – 5 pm<br>Sat–Sun: Closed</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Mind & Metabolism LLC. All rights reserved.</p>
-      <div>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>
-        <a href="terms-of-use.html">Terms of Use</a>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<img src="images/logo.jpeg" alt="Mind &amp; Metabolism" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1);opacity:0.85;">
+<p>Outpatient psychiatric care for Washington State. Telehealth statewide and in-person in Lakewood, WA. WA Medicaid and most major insurance accepted.</p>
+</div>
+<div>
+<h4>For Providers</h4>
+<ul>
+<li><a href="#referral-form">Submit a Referral</a></li>
+<li><a href="#who-we-serve">Who We Serve</a></li>
+<li><a href="#insurance">Insurance</a></li>
+<li><a href="mailto:info@mindmetab.com">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4>For Patients</h4>
+<ul>
+<li><a href="index.html">Homepage</a></li>
+<li><a href="index.html#services">What We Treat</a></li>
+<li><a href="https://care.headway.co/providers/elizabeth-calfos" target="_blank">Request Care</a></li>
+<li><a href="index.html#insurance">Insurance</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<ul>
+<li><a href="tel:2535255536">(253) 525-5536</a></li>
+<li><a href="mailto:info@mindmetab.com">info@mindmetab.com</a></li>
+</ul>
+<p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;">Mon&ndash;Fri: 9 am &ndash; 5 pm<br>Sat&ndash;Sun: Closed</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Mind &amp; Metabolism LLC. All rights reserved.</p>
+<div>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="notice-of-privacy-practices.html">Notice of Privacy Practices</a>
+<a href="terms-of-use.html">Terms of Use</a>
+</div>
+</div>
+</div>
 </footer>
 
 <script>
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      mobileNav.setAttribute('aria-hidden', !isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      });
-    });
-  }
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+if (hamburger && mobileNav) {
+hamburger.addEventListener('click', () => {
+const isOpen = mobileNav.classList.toggle('open');
+hamburger.classList.toggle('open');
+hamburger.setAttribute('aria-expanded', isOpen);
+mobileNav.setAttribute('aria-hidden', !isOpen);
+document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+mobileNav.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => {
+mobileNav.classList.remove('open');
+hamburger.classList.remove('open');
+hamburger.setAttribute('aria-expanded', 'false');
+mobileNav.setAttribute('aria-hidden', 'true');
+document.body.style.overflow = '';
+});
+});
+}
 
-  // Form submit
-  document.getElementById('referral-form-el').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }
-  });
+// Form submit
+document.getElementById('referral-form-el').addEventListener('submit', async function(e) {
+e.preventDefault();
+const form = e.target;
+const data = new FormData(form);
+const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+if (res.ok) {
+form.style.display = 'none';
+document.getElementById('form-success').style.display = 'block';
+}
+});
 </script>
 
-</body>
-</html>
+</body></html>
