@@ -183,6 +183,7 @@ gtag('js',new Date());
 gtag('config','G-LGF7Y420WW',{allow_google_signals:false,allow_ad_personalization_signals:false});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
 if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname});
+else if(h.indexOf('zocdoc.com')>-1)gtag('event','book_online_click',{link_location:location.pathname});
 else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname});
 else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname});});
 </script>
@@ -246,6 +247,7 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   </div>
   <div class="cta-row">
     <a href="https://patientportal.advancedmd.com/163633/onlineintake" target="_blank" rel="noopener" class="btn-primary">Request Care</a>
+    <a href="https://www.zocdoc.com/practice/mind-and-metabolism-171610" target="_blank" rel="noopener" class="btn-outline-green">Book Online Now</a>
     <a href="tel:2535255536" class="btn-outline-green">Call (253) 525-5536</a>
   </div>
 

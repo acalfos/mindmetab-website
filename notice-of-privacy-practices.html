@@ -46,6 +46,7 @@ gtag('js',new Date());
 gtag('config','G-LGF7Y420WW',{allow_google_signals:false,allow_ad_personalization_signals:false});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
 if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname});
+else if(h.indexOf('zocdoc.com')>-1)gtag('event','book_online_click',{link_location:location.pathname});
 else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname});
 else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname});});
 </script>
