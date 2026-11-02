@@ -1197,7 +1197,7 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
         <p>Board-certified psychiatric evaluations and medication management for adults across Washington State. We take time to understand what you're going through, not just your symptoms. Secure telehealth statewide, with limited in-person visits in Lakewood when available. Most major insurance accepted.</p>
         <div class="hero-actions">
           <a href="https://patientportal.advancedmd.com/163633/onlineintake" target="_blank" class="btn btn-primary">Book Now</a>
-          <a href="#services" class="btn btn-outline">See What We Treat</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
         </div>
         <div class="hero-trust">
           <div class="hero-trust-avatars">
@@ -1663,9 +1663,9 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   <div class="container">
     <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:960px;margin:0 auto;">
       <div>
-        <span class="label">Get in touch</span>
-        <h2 style="margin-bottom:16px;">Not ready to book? That's okay.</h2>
-        <p style="font-size:18px;margin-bottom:24px;">Send us a message and we'll reach out within one business day. No pressure, no obligation.</p>
+        <span class="label">Contact us</span>
+        <h2 style="margin-bottom:16px;">Prefer that we book for you?</h2>
+        <p style="font-size:18px;margin-bottom:24px;">Leave your details and our team will call you to find a time and get you scheduled, usually within one business day. No pressure, no obligation.</p>
         <div style="display:flex;flex-direction:column;gap:16px;font-size:15px;color:var(--muted);">
           <div style="display:flex;align-items:center;gap:12px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1682,45 +1682,48 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
         </div>
       </div>
       <div style="background:#fff;border-radius:var(--radius-lg);padding:40px;border:1px solid var(--border);">
-        <form action="https://formspree.io/f/mpqevydl" method="POST" id="contact-form">
-          <div style="display:flex;flex-direction:column;gap:20px;">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSehnleQQquhLjN8YESKKGTU3ds85LG3H1mKBikqWFJbBstT9w/formResponse" method="POST" id="contact-form">
+          <div style="display:flex;flex-direction:column;gap:18px;">
             <div>
-              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Full Name</label>
-              <input type="text" name="name" required placeholder="Your name" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Full Name *</label>
+              <input type="text" name="entry.478276111" required autocomplete="name" placeholder="Your name" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
             </div>
             <div>
-              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Phone Number</label>
-              <input type="tel" name="phone" required placeholder="Best number to reach you" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Phone Number *</label>
+              <input type="tel" name="entry.1531743765" required autocomplete="tel" placeholder="Best number to reach you" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
             </div>
             <div>
-              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Email Address</label>
-              <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Email Address <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+              <input type="email" name="entry.1039918451" autocomplete="email" placeholder="you@example.com" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
             </div>
             <div>
-              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">How can we help? <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
-              <textarea name="message" rows="3" placeholder="A brief note, no medical details needed" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;resize:vertical;transition:border-color .2s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Preferred Contact Method</label>
+              <select name="entry.1494420768" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'">
+                <option>Phone call</option><option>Text message</option><option>Email</option>
+              </select>
             </div>
-            <p style="font-size:12px;color:var(--muted);margin:0;">Please do not include sensitive medical information in this form. For confidential communications, call us directly or use our <a href="https://patientportal.advancedmd.com/163633/onlineintake" target="_blank" style="color:var(--green);">secure patient portal</a>.</p>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:14px;">Send Message</button>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Insurance Plan <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+              <input type="text" name="entry.1945773915" placeholder="e.g. Premera, Aetna, Medicare" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Best Time to Reach You <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+              <input type="text" name="entry.1997262006" placeholder="e.g. weekday mornings" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'" />
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">How Can We Help? <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+              <textarea name="entry.639759609" rows="3" placeholder="A brief note about what you're looking for" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s;background:#fff;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+            </div>
+            <input type="hidden" name="entry.PAGE" data-entry="entry.1380424719" value="Homepage" />
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Your information is sent securely and protected under HIPAA. It goes only to our care team. This form is not for emergencies. If you are in crisis, call or text 988, or call 911.</p>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:14px;">Request a Call Back</button>
           </div>
         </form>
         <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h3 style="margin-bottom:8px;">Message sent.</h3>
-          <p>We'll be in touch within one business day.</p>
+          <h3 style="margin-bottom:8px;">Request received.</h3>
+          <p>Our team will reach out within one business day to get you scheduled.</p>
         </div>
-        <script>
-          document.getElementById('contact-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = new FormData(form);
-            const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-            if (res.ok) {
-              form.style.display = 'none';
-              document.getElementById('form-success').style.display = 'block';
-            }
-          });
-        </script>
       </div>
     </div>
   </div>
@@ -1880,5 +1883,27 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   animEls.forEach(el => observer.observe(el));
 </script>
 
+
+<script>
+(function(){
+  function wire(formId, successId){
+    var f=document.getElementById(formId); if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn=f.querySelector('button[type=submit]'); if(btn){btn.disabled=true;btn.textContent='Sending...';}
+      var pg=f.querySelector('input[name="entry.PAGE"]'); if(pg) pg.name=pg.dataset.entry;
+      fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)})
+        .then(function(){ f.style.display='none'; document.getElementById(successId).style.display='block';
+          if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname}); })
+        .catch(function(){ if(btn){btn.disabled=false;btn.textContent='Try again';}
+          alertBox(f); });
+    });
+  }
+  function alertBox(f){ var p=document.createElement('p'); p.style.color='#b42318'; p.style.fontSize='14px';
+    p.textContent='Something went wrong. Please call us at (253) 525-5536.'; f.appendChild(p); }
+  wire('contact-form','form-success');
+  wire('referral-form-el','form-success');
+})();
+</script>
 </body>
 </html>

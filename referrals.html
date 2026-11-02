@@ -347,7 +347,7 @@ Most major insurance accepted, including Medicare
 </div>
 <div class="hero-promise-item">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-Referral follow-up within 24 hours
+Patient contacted within 24 hours of referral
 </div>
 <div class="hero-promise-item">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -484,13 +484,13 @@ info@mindmetab.com
 <div class="process-step-number">1</div>
 <div class="process-connector"></div>
 <h3>Submit the referral</h3>
-<p>Fill out the short form below with your contact details. No patient information goes through the website. Takes under a minute.</p>
+<p>Fill out the secure form below with your details and the patient's. It takes about two minutes and is protected under HIPAA.</p>
 </div>
 <div class="process-step">
 <div class="process-step-number">2</div>
 <div class="process-connector"></div>
-<h3>We call you, then the patient</h3>
-<p>Within 24 hours, our intake team calls you to collect the patient's details securely by phone, then contacts the patient directly to schedule their evaluation.</p>
+<h3>We contact the patient</h3>
+<p>Within 24 hours of receiving your referral, our intake team contacts the patient directly to schedule their evaluation.</p>
 </div>
 <div class="process-step">
 <div class="process-step-number">3</div>
@@ -534,7 +534,7 @@ info@mindmetab.com
 <div class="form-left">
 <span class="label">Submit a referral</span>
 <h2>Ready to refer? We'll take it from here.</h2>
-<p>Send us your contact details and we'll call you within 24 hours to take the referral securely.</p>
+<p>Submit the secure form and we'll contact your patient within 24 hours to schedule their intake appointment.</p>
 <div class="form-contact-item">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l1.27-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
 <a href="tel:2535255536">(253) 525-5536</a>
@@ -553,34 +553,48 @@ info@mindmetab.com
 </div>
 <div class="form-box">
 <h3>Patient Referral Form</h3>
-<p>All fields marked with * are required. <strong>Please don't enter patient names, birth dates, or health information here.</strong> We'll collect those securely by phone.</p>
-<form action="https://formspree.io/f/mpqevydl" method="POST" id="referral-form-el">
+<p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><strong>Secure and HIPAA-protected.</strong> Fields marked with * are required.</p>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSf5jxFzHOgd_pwb9XVx55NnHqr0VxHsqDxDlb_0OtSlkMJKnQ/formResponse" method="POST" id="referral-form-el">
 <div class="form-fields">
 <div class="form-section-heading">Referring Provider</div>
 <div class="form-row">
 <div class="field-group">
 <label>Your Name *</label>
-<input type="text" name="provider_name" required placeholder="Dr. Jane Smith">
+<input type="text" name="entry.731007518" required placeholder="Dr. Jane Smith">
 </div>
 <div class="field-group">
 <label>Organization / Practice *</label>
-<input type="text" name="organization" required placeholder="Clinic or practice name">
+<input type="text" name="entry.38989591" required placeholder="Clinic or practice name">
 </div>
 </div>
 <div class="form-row">
 <div class="field-group">
 <label>Your Phone *</label>
-<input type="tel" name="provider_phone" required placeholder="Best number to reach you">
+<input type="tel" name="entry.113510095" required placeholder="Best number to reach you">
 </div>
 <div class="field-group">
 <label>Your Email</label>
-<input type="email" name="provider_email" placeholder="For referral confirmation">
+<input type="email" name="entry.1715043475" placeholder="For referral confirmation">
 </div>
 </div>
-<div class="form-section-heading" style="margin-top:8px;">Referral Details</div>
+<div class="form-section-heading" style="margin-top:8px;">Patient Information</div>
+<div class="form-row">
 <div class="field-group">
-<label>Patient's insurance plan *</label>
-<select name="patient_insurance" required>
+<label>Patient Name *</label>
+<input type="text" name="entry.1976267372" required placeholder="First and last name">
+</div>
+<div class="field-group">
+<label>Date of Birth *</label>
+<input type="text" name="entry.2426602" required placeholder="MM/DD/YYYY">
+</div>
+</div>
+<div class="field-group">
+<label>Patient Phone Number *</label>
+<input type="tel" name="entry.1104401507" required placeholder="Best number to reach the patient">
+</div>
+<div class="field-group">
+<label>Patient Insurance *</label>
+<select name="entry.2139049745" required>
 <option value="">Select insurance plan</option>
 <optgroup label="Commercial &amp; Medicare">
 <option>Medicare</option>
@@ -602,24 +616,28 @@ info@mindmetab.com
 </select>
 </div>
 <div class="field-group">
+<label>Reason for Referral *</label>
+<textarea name="entry.75221257" rows="3" required placeholder="Presenting concern, diagnosis, and what you need evaluated or managed"></textarea>
+</div>
+<div class="field-group">
 <label>Urgency</label>
-<select name="urgency">
+<select name="entry.758640707">
 <option value="Routine">Routine (within 1-2 weeks)</option>
 <option value="Urgent">Urgent (within 2-3 business days)</option>
 </select>
 </div>
 <div class="field-group">
-<label>Best time to call you <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
-<input type="text" name="best_time" placeholder="e.g. weekdays after 2pm">
+<label>Additional Notes <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+<textarea name="entry.530783731" rows="2" placeholder="Anything else we should know before contacting the patient, including the best time to reach you"></textarea>
 </div>
-<p class="form-disclaimer">This form collects your contact details only. Do not include patient health information. This form is not for medical emergencies. If your patient is in crisis, call 911 or direct them to call or text 988.</p>
+<p class="form-disclaimer">Information submitted here is encrypted, stored on HIPAA-compliant systems, and used only to coordinate this patient's care. This form is not for medical emergencies. If your patient is in crisis, call 911 or direct them to call or text 988.</p>
 <button type="submit" class="btn btn-primary form-btn">Submit Referral</button>
 </div>
 </form>
 <div id="form-success">
 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
 <h3 style="font-family:'DM Serif Display',serif;font-size:24px;color:var(--text);margin-bottom:8px;">Referral received.</h3>
-<p style="color:var(--muted);">We'll call you within 24 hours to take the referral details securely by phone.</p>
+<p style="color:var(--muted);">We'll contact your patient within 24 hours to schedule. You'll receive a confirmation once they're scheduled.</p>
 </div>
 </div>
 </div>
@@ -695,17 +713,29 @@ document.body.style.overflow = '';
 });
 }
 
-// Form submit
-document.getElementById('referral-form-el').addEventListener('submit', async function(e) {
-e.preventDefault();
-const form = e.target;
-const data = new FormData(form);
-const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-if (res.ok) {
-form.style.display = 'none';
-document.getElementById('form-success').style.display = 'block';
-}
-});
+
 </script>
 
+
+<script>
+(function(){
+  function wire(formId, successId){
+    var f=document.getElementById(formId); if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn=f.querySelector('button[type=submit]'); if(btn){btn.disabled=true;btn.textContent='Sending...';}
+      var pg=f.querySelector('input[name="entry.PAGE"]'); if(pg) pg.name=pg.dataset.entry;
+      fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)})
+        .then(function(){ f.style.display='none'; document.getElementById(successId).style.display='block';
+          if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname}); })
+        .catch(function(){ if(btn){btn.disabled=false;btn.textContent='Try again';}
+          alertBox(f); });
+    });
+  }
+  function alertBox(f){ var p=document.createElement('p'); p.style.color='#b42318'; p.style.fontSize='14px';
+    p.textContent='Something went wrong. Please call us at (253) 525-5536.'; f.appendChild(p); }
+  wire('contact-form','form-success');
+  wire('referral-form-el','form-success');
+})();
+</script>
 </body></html>
