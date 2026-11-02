@@ -36,6 +36,17 @@
     footer { background: var(--cream); border-top: 1px solid var(--border); padding: 32px; text-align: center; font-size: 14px; color: var(--muted); }
     footer a { color: var(--green); }
   </style>
+<!-- Google Analytics: page views and Request Care / phone clicks only. No ads, no signals, no personal info. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGF7Y420WW"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-LGF7Y420WW',{allow_google_signals:false,allow_ad_personalization_signals:false});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname});
+else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname});
+else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname});});
+</script>
 </head>
 <body>
 
@@ -81,7 +92,7 @@
   <p>Mind & Metabolism LLC is a covered entity under the Health Insurance Portability and Accountability Act (HIPAA). Any protected health information (PHI) you share with us as a patient is handled in accordance with HIPAA regulations and our Notice of Privacy Practices. We use HIPAA-compliant systems for all clinical communications and records.</p>
 
   <h2>Cookies and Analytics</h2>
-  <p>Our website may use cookies or similar technologies to understand how visitors use the site. These do not identify you personally. You can disable cookies in your browser settings at any time.</p>
+  <p>We use Google Analytics to understand how visitors use our website, such as which pages are viewed and how often the Request Care button or phone number is clicked. Google Analytics uses cookies and receives standard technical information like your browser type and approximate location. We have turned off Google advertising features and Google Signals, and we do not send names, contact details, or health information to Google Analytics. Our patient portal and intake forms are hosted by AdvancedMD and are not tracked by Google Analytics. You can block cookies in your browser settings or use the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out add-on</a>.</p>
 
   <h2>Third-Party Services</h2>
   <p>Our website links to our patient portal, hosted by AdvancedMD. AdvancedMD is a HIPAA-compliant platform with its own terms and privacy policy. We are not responsible for the privacy practices of third-party sites.</p>

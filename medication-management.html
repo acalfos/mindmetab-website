@@ -183,6 +183,17 @@
     .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin:24px 0 8px; }
     .btn-outline-green { display:inline-flex; align-items:center; padding:10px 20px; border-radius:100px; font-size:14px; font-weight:600; text-decoration:none; border:1.5px solid var(--green); color:var(--green); }
   </style>
+<!-- Google Analytics: page views and Request Care / phone clicks only. No ads, no signals, no personal info. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGF7Y420WW"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-LGF7Y420WW',{allow_google_signals:false,allow_ad_personalization_signals:false});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname});
+else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname});
+else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname});});
+</script>
 </head>
 <body>
 
