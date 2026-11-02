@@ -7,8 +7,12 @@
     "summary": "Who can diagnose adult ADHD, what the evaluation involves, and what comes next.",
     "date": "2026-11-02",
     "read_minutes": 4,
-    "services": ["adhd", "psychiatric-evaluation", "medication-management"],
-    "reviewed_by": ""
+    "services": [
+      "adhd",
+      "psychiatric-evaluation",
+      "medication-management"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "first-psychiatric-appointment-what-to-expect",
@@ -18,8 +22,12 @@
     "summary": "What to bring, what we'll ask, and what you'll leave with.",
     "date": "2026-11-02",
     "read_minutes": 4,
-    "services": ["psychiatric-evaluation", "medication-management", "telehealth"],
-    "reviewed_by": ""
+    "services": [
+      "psychiatric-evaluation",
+      "medication-management",
+      "telehealth"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "postpartum-depression-when-to-get-help",
@@ -29,8 +37,12 @@
     "summary": "Baby blues or something more, and what treatment looks like.",
     "date": "2026-11-02",
     "read_minutes": 4,
-    "services": ["depression", "anxiety", "medication-management"],
-    "reviewed_by": ""
+    "services": [
+      "depression",
+      "anxiety",
+      "medication-management"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "adhd-in-teens-signs-parents-miss",
@@ -40,8 +52,12 @@
     "summary": "The quieter signs of ADHD that show up as school gets harder.",
     "date": "2026-11-02",
     "read_minutes": 4,
-    "services": ["adhd", "psychiatric-evaluation", "telehealth"],
-    "reviewed_by": ""
+    "services": [
+      "adhd",
+      "psychiatric-evaluation",
+      "telehealth"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "adhd-or-anxiety-difference",
@@ -51,8 +67,12 @@
     "summary": "Why they look alike, how they differ, and when it's both.",
     "date": "2026-11-02",
     "read_minutes": 4,
-    "services": ["anxiety", "adhd", "psychiatric-evaluation"],
-    "reviewed_by": ""
+    "services": [
+      "anxiety",
+      "adhd",
+      "psychiatric-evaluation"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "how-long-to-see-psychiatric-provider-washington",
@@ -62,8 +82,12 @@
     "summary": "Why waits happen and practical ways to get seen sooner.",
     "date": "2026-11-02",
     "read_minutes": 3,
-    "services": ["telehealth", "psychiatric-evaluation", "insurance"],
-    "reviewed_by": ""
+    "services": [
+      "telehealth",
+      "psychiatric-evaluation",
+      "insurance"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "insurance-coverage-adhd-evaluation-washington",
@@ -73,8 +97,12 @@
     "summary": "How coverage usually works and what to ask your plan.",
     "date": "2026-11-02",
     "read_minutes": 3,
-    "services": ["insurance", "adhd", "psychiatric-evaluation"],
-    "reviewed_by": ""
+    "services": [
+      "insurance",
+      "adhd",
+      "psychiatric-evaluation"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "adhd-medication-telehealth-rules",
@@ -85,8 +113,12 @@
     "date": "2026-11-02",
     "updated": "2026-11-02",
     "read_minutes": 4,
-    "services": ["stimulant", "adhd", "medication-management"],
-    "reviewed_by": ""
+    "services": [
+      "stimulant",
+      "adhd",
+      "medication-management"
+    ],
+    "reviewed_by": "Elizabeth Calfos, DNP, PMHNP-BC"
   },
   {
     "slug": "psychiatric-np-vs-psychiatrist",
