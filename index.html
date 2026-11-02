@@ -1121,7 +1121,12 @@
       padding: 8px;
     }
     .mobile-nav-footer .btn-mobile-phone:active { color: var(--green); }
-  </style>
+      /* whole condition card clickable */
+    .service-card { position: relative; cursor: pointer; }
+    .service-card h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+    .service-card:hover h3 a { color: var(--green) !important; }
+    .service-card h3 a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+</style>
 <!-- Google Analytics: page views and Request Care / phone clicks only. No ads, no signals, no personal info. -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGF7Y420WW"></script>
 <script>
