@@ -11,9 +11,9 @@ The weekly automation takes the first unchecked topic, writes it, and checks it 
 - [x] What to expect at your first psychiatric appointment
 - [x] Postpartum depression: when to get help
 - [x] How long does it take to see a psychiatric provider in Washington?
+- [x] Seasonal depression in the Pacific Northwest: what helps
 
 ## Up next
-- [ ] Seasonal depression in the Pacific Northwest: what helps
 - [ ] Panic attack or heart problem? What to know
 - [ ] Bipolar disorder vs. depression: why the difference matters
 - [ ] What medication management visits are actually like
