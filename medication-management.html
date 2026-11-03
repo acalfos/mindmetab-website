@@ -334,7 +334,8 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
       </div>
     </div>
     <div class="gs-form">
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSehnleQQquhLjN8YESKKGTU3ds85LG3H1mKBikqWFJbBstT9w/formResponse" method="POST" id="contact-form">
+      <form method="POST" data-fid="1FAIpQLSehnleQQquhLjN8YESKKGTU3ds85LG3H1mKBikqWFJbBstT9w" id="contact-form">
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Leave this field empty<input type="text" name="company_url" tabindex="-1" autocomplete="off" /></label></div>
         <h4>Prefer that we book for you?</h4>
         <p class="sub">Leave your details and we'll reach out within one business day.</p>
         <div class="gs-grid">
@@ -390,13 +391,33 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   var f=document.getElementById('contact-form'); if(!f) return;
   f.addEventListener('submit', function(e){
     e.preventDefault();
+      if(window.mmBot && mmBot(f)){ f.style.display='none'; var s=document.getElementById('form-success'); if(s) s.style.display='block'; return; }
     var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending...';
-    fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)}).then(function(){
+    fetch(mmUrl(f),{method:'POST',mode:'no-cors',body:mmData(f)}).then(function(){
       f.style.display='none'; document.getElementById('form-success').style.display='block';
       if(window.gtag) gtag('event','contact_form_submitted',{link_location:location.pathname});
     }).catch(function(){ btn.disabled=false; btn.textContent='Try again';
       var p=document.createElement('p'); p.style.color='#b42318'; p.style.fontSize='14px'; p.textContent='Something went wrong. Please call us at (253) 525-5536.'; f.appendChild(p); });
   });
+})();
+</script>
+<script>
+/* Spam protection: hidden key + bot trap + speed check */
+(function(){
+  window.mmT0 = Date.now();
+  var K = {'contact-form':'913688297','referral-form-el':'888647938'};
+  window.mmUrl = function(f){ return 'https://docs.google.com/forms/d/e/' + f.getAttribute('data-fid') + '/formResponse'; };
+  window.mmBot = function(f){
+    var hp = f.querySelector('input[name="company_url"]');
+    if (hp && hp.value) return true;
+    if (Date.now() - window.mmT0 < 3000) return true;
+    return false;
+  };
+  window.mmData = function(f){
+    var d = new FormData(f); d.delete('company_url');
+    if (K[f.id]) d.append('entry.' + K[f.id], ['mmK7','q2Xv9p'].join(''));
+    return d;
+  };
 })();
 </script>
 </body>

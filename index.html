@@ -1695,7 +1695,8 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
         </div>
       </div>
       <div style="background:#fff;border-radius:var(--radius-lg);padding:40px;border:1px solid var(--border);">
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSehnleQQquhLjN8YESKKGTU3ds85LG3H1mKBikqWFJbBstT9w/formResponse" method="POST" id="contact-form">
+        <form method="POST" data-fid="1FAIpQLSehnleQQquhLjN8YESKKGTU3ds85LG3H1mKBikqWFJbBstT9w" id="contact-form">
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Leave this field empty<input type="text" name="company_url" tabindex="-1" autocomplete="off" /></label></div>
           <div style="display:flex;flex-direction:column;gap:18px;">
             <div>
               <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text);">Full Name *</label>
@@ -1906,9 +1907,10 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
     var f=document.getElementById(formId); if(!f) return;
     f.addEventListener('submit', function(e){
       e.preventDefault();
+      if(window.mmBot && mmBot(f)){ f.style.display='none'; var s=document.getElementById('form-success'); if(s) s.style.display='block'; return; }
       var btn=f.querySelector('button[type=submit]'); if(btn){btn.disabled=true;btn.textContent='Sending...';}
       var pg=f.querySelector('input[name="entry.PAGE"]'); if(pg) pg.name=pg.dataset.entry;
-      fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)})
+      fetch(mmUrl(f),{method:'POST',mode:'no-cors',body:mmData(f)})
         .then(function(){ f.style.display='none'; document.getElementById(successId).style.display='block';
           if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname}); })
         .catch(function(){ if(btn){btn.disabled=false;btn.textContent='Try again';}
@@ -1919,6 +1921,25 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
     p.textContent='Something went wrong. Please call us at (253) 525-5536.'; f.appendChild(p); }
   wire('contact-form','form-success');
   wire('referral-form-el','form-success');
+})();
+</script>
+<script>
+/* Spam protection: hidden key + bot trap + speed check */
+(function(){
+  window.mmT0 = Date.now();
+  var K = {'contact-form':'913688297','referral-form-el':'888647938'};
+  window.mmUrl = function(f){ return 'https://docs.google.com/forms/d/e/' + f.getAttribute('data-fid') + '/formResponse'; };
+  window.mmBot = function(f){
+    var hp = f.querySelector('input[name="company_url"]');
+    if (hp && hp.value) return true;
+    if (Date.now() - window.mmT0 < 3000) return true;
+    return false;
+  };
+  window.mmData = function(f){
+    var d = new FormData(f); d.delete('company_url');
+    if (K[f.id]) d.append('entry.' + K[f.id], ['mmK7','q2Xv9p'].join(''));
+    return d;
+  };
 })();
 </script>
 </body>
