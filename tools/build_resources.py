@@ -54,18 +54,20 @@ def main():
     for a in articles:
         if a.get("legacy"): continue
         body = (ROOT / "content/articles" / f"{a['slug']}.html").read_text()
-        check_text(a["slug"], a["title"] + " " + a["description"] + " " + body)
+        check_text(a["slug"], a["title"] + " " + a["description"] + " " + body + " " + a.get("gbp_post", ""))
+        gp = a.get("gbp_post", "")
+        if gp and (len(gp) > 600 or re.search(r"\(?\d{3}\)?[ .-]?\d{3}[ .-]\d{4}", gp)): fail(f"{a['slug']}: gbp_post too long or contains a phone number")
         url = f"{BASE}resources/{a['slug']}.html"
         svc = [SERVICES[s] for s in a["services"]]
         primary_href, primary_name = svc[0]
         schema = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["description"],
                   "url": url, "mainEntityOfPage": url, "datePublished": a["date"], "dateModified": a.get("updated", a["date"]),
                   "image": BASE + "images/elizabeth-calfos.jpg",
-                  "author": {"@type": "Organization", "name": "Mind & Metabolism", "url": BASE},
+                  "author": {"@type": "Organization", "name": "Mind & Metabolism Editorial Team", "url": BASE},
                   "publisher": {"@type": "Organization", "name": "Mind & Metabolism", "logo": {"@type": "ImageObject", "url": BASE + "images/logo.jpeg"}}}
         if a.get("reviewed_by"):
             schema["reviewedBy"] = {"@type": "Person", "name": a["reviewed_by"]}
-        byline = f"Mind &amp; Metabolism · {nice_date(a['date'])} · {a.get('read_minutes', 4)} min read"
+        byline = f"Published by Mind &amp; Metabolism Editorial Team · {nice_date(a['date'])} · {a.get('read_minutes', 4)} min read"
         if a.get("reviewed_by"):
             byline += f" · Reviewed by {html.escape(a['reviewed_by'])}"
         # related: same tag first, then newest
@@ -161,6 +163,33 @@ def main():
         t, n = re.subn(r'<div class="resources-grid".*?</div>\s*(?=</div>\s*</section>)', lambda m: block + "\n  ", t, count=1, flags=re.S)
         if n != 1: fail("homepage resources block not found")
     idx.write_text(t)
+
+    # ---------- RSS feed (Zapier posts new items to Google Business Profile) ----------
+    from email.utils import format_datetime
+    from datetime import datetime, timezone
+    items = []
+    for a in [x for x in articles if not x.get("legacy")][:20]:
+        link = f"{BASE}resources/{a['slug']}.html"
+        d = datetime.strptime(a["date"], "%Y-%m-%d").replace(hour=18, tzinfo=timezone.utc)
+        text = a.get("gbp_post") or a["summary"]
+        items.append(f"""  <item>
+    <title>{html.escape(a['title'])}</title>
+    <link>{link}</link>
+    <guid isPermaLink="true">{link}</guid>
+    <pubDate>{format_datetime(d)}</pubDate>
+    <description>{html.escape(text)}</description>
+  </item>""")
+    rss = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Mind &amp; Metabolism Resources</title>
+  <link>{BASE}resources/</link>
+  <description>New articles from Mind &amp; Metabolism, a psychiatric practice serving Washington State.</description>
+{chr(10).join(items)}
+</channel>
+</rss>
+"""
+    (ROOT / "resources/feed.xml").write_text(rss)
 
     # ---------- sitemap ----------
     sm = ROOT / "sitemap.xml"; s = sm.read_text()
