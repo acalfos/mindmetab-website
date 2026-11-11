@@ -68,9 +68,12 @@ def label(t, color=GREEN):
 
 def treat():
     ck = f'<span style="color:{GREEN2};font-weight:bold;">&#10003;</span>&nbsp; '
-    rows = [("Depression and anxiety", "ADHD evaluations"), ("Bipolar disorder", "PTSD and OCD"), ("Postpartum depression", "Insomnia")]
+    rows = [("Depression", "Anxiety and panic"), ("ADHD (teens and adults)", "Bipolar disorder"),
+            ("Schizophrenia and psychosis", "PTSD and trauma"), ("OCD", "Postpartum depression"),
+            ("Insomnia and sleep problems", "Dementia-related behavior changes")]
     trs = "".join(f'<tr><td width="50%" style="padding:6px 0;">{ck}{a}</td><td width="50%" style="padding:6px 0;">{ck}{b}</td></tr>' for a, b in rows)
-    return f'<tr><td style="padding:8px 32px 6px;">{label("What we help with")}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px;color:{BODY};">{trs}</table></td></tr>'
+    more = f'<p style="margin:10px 0 0;font-size:13px;color:#5c6b66;">Plus full psychiatric evaluations and ongoing medication management. <a href="https://mindmetab.com/?{UTM}#services" style="color:{GREEN};font-weight:bold;">See all services</a></p>'
+    return f'<tr><td style="padding:8px 32px 6px;">{label("Conditions we treat")}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px;color:{BODY};">{trs}</table>{more}</td></tr>'
 
 
 def insurance():
@@ -125,7 +128,8 @@ EMAILS = {
         hero("", "Still here when your patients need us",
              "A quick follow-up on psychiatric referrals in Washington.", button=False)
         + paras("{{greeting}}",
-                "I wanted to follow up on my note from last week. If any of your patients could use a psychiatric evaluation or help with medication, we're accepting new patients now and can usually see them within 1 to 2 days.")
+                "I wanted to follow up on my note from last week. If any of your patients could use a psychiatric evaluation or help with medication, we're accepting new patients now and can usually see them within 1 to 2 days.",
+                "We treat depression, anxiety, ADHD, bipolar disorder, schizophrenia and psychosis, PTSD, OCD, postpartum depression, insomnia and more, for teens and adults.")
         + f"""<tr><td style="padding:4px 32px 10px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td width="33%" align="center" valign="top" style="padding:14px 6px;background:#e8f0ed;border-radius:12px;"><p style="margin:0;font-size:22px;">&#9200;</p><p style="margin:6px 0 0;font-size:13px;font-weight:bold;color:{GREEN};">Seen in 1 to 2 days</p></td>
 <td width="8"></td>
@@ -142,7 +146,7 @@ EMAILS = {
              "No reply needed. We just want to be easy to find when the timing is right.", button=False,
              color_from="#1f3d33", color_to=GREEN)
         + paras("{{greeting}}",
-                "This is my last note for now. I know inboxes are full, so I'll keep it short: whenever a patient needs a psychiatric evaluation or medication management, Mind &amp; Metabolism is here.")
+                "This is my last note for now. I know inboxes are full, so I'll keep it short: whenever a patient needs a psychiatric evaluation or medication management, for anything from depression and ADHD to bipolar disorder or schizophrenia, Mind &amp; Metabolism is here.")
         + callout(f"""<p style="margin:0 0 6px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:{GREEN};font-weight:bold;">Save for later</p>
 <p style="margin:0;font-size:16px;"><a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/referrals</a></p>
 <p style="margin:6px 0 0;">Secure two-minute referral form. First visit usually within 1 to 2 days. Aetna, UnitedHealthcare, Cigna, Premera, Regence, Medicare and Apple Health plans accepted.</p>""", top=4)
