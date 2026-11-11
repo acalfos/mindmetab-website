@@ -34,7 +34,7 @@ def wrap(inner: str) -> str:
 {inner}
 <tr><td style="background:#1f3d33;padding:22px 32px;font-size:12px;line-height:1.6;color:#b9cfc6;">
 <p style="margin:0 0 6px;color:#ffffff;font-weight:bold;">Mind &amp; Metabolism Wellness Clinic</p>
-<p style="margin:0;">5515 Steilacoom Blvd SW, Suite 127, Lakewood, WA 98499<br>(253) 525-5536 &nbsp;|&nbsp; <a href="mailto:info@mindmetab.com" style="color:#cfe5dc;">info@mindmetab.com</a> &nbsp;|&nbsp; <a href="https://mindmetab.com/?{UTM}" style="color:#cfe5dc;">mindmetab.com</a></p>
+<p style="margin:0;"><a href="https://maps.google.com/?q=5515+Steilacoom+Blvd+SW+Suite+127+Lakewood+WA+98499" style="color:#cfe5dc;text-decoration:none;">5515 Steilacoom Blvd SW, Suite 127, Lakewood, WA 98499</a><br><a href="tel:2535255536" style="color:#cfe5dc;text-decoration:none;">(253) 525-5536</a> &nbsp;|&nbsp; <a href="mailto:info@mindmetab.com" style="color:#cfe5dc;">info@mindmetab.com</a> &nbsp;|&nbsp; <a href="https://mindmetab.com/?{UTM}" style="color:#cfe5dc;">mindmetab.com</a></p>
 <p style="margin:12px 0 0;color:#8fa9a0;">Please don't include patient health details in a reply to this email. Use the secure referral form instead. Prefer not to hear from us? Reply "remove" and we won't email you again.</p>
 </td></tr>
 </table></td></tr></table>
