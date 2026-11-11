@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "content/outreach"
 UTM = "utm_source=referral_email&amp;utm_medium=email"
 REFER = f"https://mindmetab.com/referrals.html?{UTM}#referral-form"
-GREEN, GREEN2, GOLD, INK, BODY = "#2d5f4f", "#3d7a64", "#f2b544", "#1f2a27", "#33403c"
+GREEN, GREEN2, GOLD, INK, BODY = "#37725f", "#37725f", "#f2b544", "#1f2a27", "#33403c"
 
 SUBJECTS = {
     "referral-email": "Psychiatric referrals for your patients: first visit usually within 1 to 2 days",
@@ -32,10 +32,10 @@ def wrap(inner: str) -> str:
 <a href="https://mindmetab.com/?{UTM}" style="text-decoration:none;"><img src="{{{{logo}}}}" width="180" alt="Mind &amp; Metabolism Wellness Clinic" style="display:block;width:180px;height:auto;border:0;"></a>
 </td></tr>
 {inner}
-<tr><td style="background:#1f3d33;padding:22px 32px;font-size:12px;line-height:1.6;color:#b9cfc6;">
+<tr><td style="background:#37725f;padding:22px 32px;font-size:12px;line-height:1.6;color:#e3efe9;">
 <p style="margin:0 0 6px;color:#ffffff;font-weight:bold;">Mind &amp; Metabolism Wellness Clinic</p>
-<p style="margin:0;"><a href="https://maps.google.com/?q=5515+Steilacoom+Blvd+SW+Suite+127+Lakewood+WA+98499" style="color:#cfe5dc;text-decoration:none;">5515 Steilacoom Blvd SW, Suite 127, Lakewood, WA 98499</a><br><a href="tel:2535255536" style="color:#cfe5dc;text-decoration:none;">(253) 525-5536</a> &nbsp;|&nbsp; <a href="mailto:info@mindmetab.com" style="color:#cfe5dc;">info@mindmetab.com</a> &nbsp;|&nbsp; <a href="https://mindmetab.com/?{UTM}" style="color:#cfe5dc;">mindmetab.com</a></p>
-<p style="margin:12px 0 0;color:#8fa9a0;">Please don't include patient health details in a reply to this email. Use the secure referral form instead. Prefer not to hear from us? Reply "remove" and we won't email you again.</p>
+<p style="margin:0;"><a href="https://maps.google.com/?q=5515+Steilacoom+Blvd+SW+Suite+127+Lakewood+WA+98499" style="color:#ffffff;text-decoration:none;">5515 Steilacoom Blvd SW, Suite 127, Lakewood, WA 98499</a><br><a href="tel:2535255536" style="color:#ffffff;text-decoration:none;">(253) 525-5536</a> &nbsp;|&nbsp; <a href="mailto:info@mindmetab.com" style="color:#ffffff;">info@mindmetab.com</a> &nbsp;|&nbsp; <a href="https://mindmetab.com/?{UTM}" style="color:#ffffff;">mindmetab.com</a></p>
+<p style="margin:12px 0 0;color:#cfe2da;">Please don't include patient health details in a reply to this email. Use the secure referral form instead. Prefer not to hear from us? Reply "remove" and we won't email you again.</p>
 </td></tr>
 </table></td></tr></table>
 </body></html>
@@ -43,7 +43,7 @@ def wrap(inner: str) -> str:
 
 
 def hero(eyebrow, title, sub, button=True, color_from=GREEN, color_to=GREEN2):
-    eb = f'<p style="margin:0 0 10px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#cfe5dc;font-weight:bold;">{eyebrow}</p>' if eyebrow else ""
+    eb = f'<p style="margin:0 0 10px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#ffffff;font-weight:bold;">{eyebrow}</p>' if eyebrow else ""
     btn = f"""<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;"><tr><td style="border-radius:100px;background:{GOLD};">
 <a href="{REFER}" style="display:inline-block;padding:14px 28px;font-size:16px;font-weight:bold;color:{INK};text-decoration:none;border-radius:100px;">Refer a Patient</a></td></tr></table>""" if button else ""
     return f"""<tr><td style="background:{color_from};background-image:linear-gradient(135deg,{color_from} 0%,{color_to} 100%);padding:36px 32px 32px;">
@@ -149,7 +149,7 @@ EMAILS = {
     "followup-2": wrap(
         hero("", "One last note, and a link worth saving",
              "No reply needed. We just want to be easy to find when the timing is right.", button=False,
-             color_from="#1f3d33", color_to=GREEN)
+             color_from=GREEN, color_to=GREEN)
         + paras("{{greeting}}",
                 "This is my last note for now. I know inboxes are full, so I'll keep it short: whenever a patient needs a psychiatric evaluation or medication management, for anything from depression and ADHD to bipolar disorder or schizophrenia, Mind &amp; Metabolism is here.")
         + callout(f"""<p style="margin:0 0 6px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:{GREEN};font-weight:bold;">Save for later</p>
