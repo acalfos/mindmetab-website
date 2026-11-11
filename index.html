@@ -1133,10 +1133,18 @@
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-LGF7Y420WW',{allow_google_signals:false,allow_ad_personalization_signals:false});
+/* Where did this visitor come from? Saved for the visit, added to the call-back form and click events. No personal info. */
+(function(){var s;try{s=sessionStorage.getItem('mmSrc')}catch(e){}
+if(!s){var q=new URLSearchParams(location.search),r=document.referrer||'',c=q.get('utm_campaign');
+s=q.get('msclkid')?'Bing ad':(q.get('gclid')||q.get('gbraid')||q.get('wbraid'))?'Google ad':q.get('utm_source')?(q.get('utm_source')+' '+(q.get('utm_medium')||'')).trim()
+:/google\./.test(r)?'Google search':/bing\.|yahoo\.|duckduckgo\.|msn\./.test(r)?'Bing/Yahoo search':/facebook\.|instagram\.|fb\./.test(r)?'Facebook/Instagram'
+:/linkedin\./.test(r)?'LinkedIn':/tiktok\./.test(r)?'TikTok':(r&&r.indexOf(location.hostname)<0)?'Other website':'Direct';
+if(c)s+=' ('+c+')';s+=', landed on '+location.pathname;try{sessionStorage.setItem('mmSrc',s)}catch(e){}}
+window.mmSrc=s;})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
-if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname});
-else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname});
-else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname});});
+if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
+else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
+else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname,ad_source:window.mmSrc||''});});
 </script>
 </head>
 <body>
@@ -1912,7 +1920,7 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
       var pg=f.querySelector('input[name="entry.PAGE"]'); if(pg) pg.name=pg.dataset.entry;
       fetch(mmUrl(f),{method:'POST',mode:'no-cors',body:mmData(f)})
         .then(function(){ f.style.display='none'; document.getElementById(successId).style.display='block';
-          if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname}); })
+          if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname,ad_source:window.mmSrc||''}); })
         .catch(function(){ if(btn){btn.disabled=false;btn.textContent='Try again';}
           alertBox(f); });
     });
@@ -1938,6 +1946,8 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   window.mmData = function(f){
     var d = new FormData(f); d.delete('company_url');
     if (K[f.id]) d.append('entry.' + K[f.id], ['mmK7','q2Xv9p'].join(''));
+    var pg = f.querySelector('input[name="entry.1380424719"]');
+    if (pg && window.mmSrc) d.set('entry.1380424719', pg.value + ' | Source: ' + window.mmSrc);
     return d;
   };
 })();

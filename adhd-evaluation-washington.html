@@ -212,11 +212,32 @@
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-LGF7Y420WW',{allow_google_signals:false,allow_ad_personalization_signals:false});
+/* Where did this visitor come from? Saved for the visit, added to the call-back form and click events. No personal info. */
+(function(){var s;try{s=sessionStorage.getItem('mmSrc')}catch(e){}
+if(!s){var q=new URLSearchParams(location.search),r=document.referrer||'',c=q.get('utm_campaign');
+s=q.get('msclkid')?'Bing ad':(q.get('gclid')||q.get('gbraid')||q.get('wbraid'))?'Google ad':q.get('utm_source')?(q.get('utm_source')+' '+(q.get('utm_medium')||'')).trim()
+:/google\./.test(r)?'Google search':/bing\.|yahoo\.|duckduckgo\.|msn\./.test(r)?'Bing/Yahoo search':/facebook\.|instagram\.|fb\./.test(r)?'Facebook/Instagram'
+:/linkedin\./.test(r)?'LinkedIn':/tiktok\./.test(r)?'TikTok':(r&&r.indexOf(location.hostname)<0)?'Other website':'Direct';
+if(c)s+=' ('+c+')';s+=', landed on '+location.pathname;try{sessionStorage.setItem('mmSrc',s)}catch(e){}}
+window.mmSrc=s;})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
-if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname});
-else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname});
-else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname});});
+if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
+else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
+else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname,ad_source:window.mmSrc||''});});
 </script>
+<style>
+.trust-strip{list-style:none;margin:20px 0 8px;padding:16px 20px;background:var(--green-light);border-radius:12px;display:grid;gap:8px;font-size:15px;color:var(--text)}
+.trust-strip li{position:relative;padding-left:24px;line-height:1.5}
+.trust-strip li:before{content:"";position:absolute;left:2px;top:6px;width:12px;height:7px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+.sticky-cta{display:none}
+@media (max-width:760px){
+ .sticky-cta{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:900;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--border);box-shadow:0 -4px 16px rgba(0,0,0,.06)}
+ .sticky-cta a{flex:1;text-align:center;padding:14px 8px;border-radius:100px;font-weight:600;font-size:16px;text-decoration:none}
+ .sticky-cta .sc-book{background:var(--green);color:#fff}
+ .sticky-cta .sc-call{border:1.5px solid var(--green);color:var(--green);background:#fff}
+ body{padding-bottom:84px}
+}
+</style>
 </head>
 <body>
 
@@ -277,9 +298,14 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   </div>
   <div class="cta-row">
     <a href="https://patientportal.advancedmd.com/163633/onlineintake" target="_blank" rel="noopener" class="btn-primary">Book Now</a>
-    <a href="#get-started" class="btn-outline-green">Contact Us</a>
+    <a href="#get-started" class="btn-outline-green">Request a Call Back</a>
     <a href="tel:2535255536" class="btn-outline-green">Call (253) 525-5536</a>
   </div>
+  <ul class="trust-strip">
+    <li>Telehealth anywhere in Washington State</li>
+    <li>Teens (13+) and adults</li>
+    <li>In network with Premera, Regence, Aetna, Cigna, UnitedHealthcare, Medicare and Apple Health plans. <a href="insurance.html">See all plans</a></li>
+  </ul>
 
   <p>A lot of people with ADHD spend years assuming they're just disorganized, lazy, or bad at follow-through. Teens get labeled as not trying hard enough. Adults blame themselves for missed deadlines and unfinished projects. If focus, time, and follow-through have been a pattern for as long as you can remember, a proper evaluation can finally explain why.</p>
   <p>Mind &amp; Metabolism offers ADHD evaluations and ongoing treatment for teens (13 and up) and adults with our board-certified psychiatric providers, including Elizabeth Calfos, DNP, PMHNP-BC, by telehealth anywhere in Washington State or in person in Lakewood when available.</p>
@@ -399,7 +425,7 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
     var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending...';
     fetch(mmUrl(f),{method:'POST',mode:'no-cors',body:mmData(f)}).then(function(){
       f.style.display='none'; document.getElementById('form-success').style.display='block';
-      if(window.gtag) gtag('event','contact_form_submitted',{link_location:location.pathname});
+      if(window.gtag) gtag('event','contact_form_submitted',{link_location:location.pathname,ad_source:window.mmSrc||''});
     }).catch(function(){ btn.disabled=false; btn.textContent='Try again';
       var p=document.createElement('p'); p.style.color='#b42318'; p.style.fontSize='14px'; p.textContent='Something went wrong. Please call us at (253) 525-5536.'; f.appendChild(p); });
   });
@@ -420,9 +446,15 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   window.mmData = function(f){
     var d = new FormData(f); d.delete('company_url');
     if (K[f.id]) d.append('entry.' + K[f.id], ['mmK7','q2Xv9p'].join(''));
+    var pg = f.querySelector('input[name="entry.1380424719"]');
+    if (pg && window.mmSrc) d.set('entry.1380424719', pg.value + ' | Source: ' + window.mmSrc);
     return d;
   };
 })();
 </script>
+<div class="sticky-cta" aria-label="Book or call">
+  <a href="https://patientportal.advancedmd.com/163633/onlineintake" target="_blank" rel="noopener" class="sc-book">Book Now</a>
+  <a href="tel:2535255536" class="sc-call">Call Us</a>
+</div>
 </body>
 </html>
