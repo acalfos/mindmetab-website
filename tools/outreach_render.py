@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 name, greeting = sys.argv[1], sys.argv[2]
 prev = "--preview" in sys.argv
-t = (ROOT / f"content/outreach/{name}.html").read_text()
+t = (ROOT / f"content/outreach/approved/{name}.html").read_text()
 b = re.search(r"<body[^>]*>(.*)</body>", t, re.S).group(1)
 b = b.replace("{{greeting}}", greeting)
 b = b.replace("{{logo}}", f"file://{ROOT}/images/logo.jpeg" if prev else "cid:att0")
