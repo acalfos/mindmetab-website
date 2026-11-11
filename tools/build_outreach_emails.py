@@ -1,7 +1,9 @@
 """Build the provider outreach emails (intro, follow-up 1, follow-up 2, thank-you).
 
-Writes content/outreach/<name>.html. Each file is a full HTML email with
-{{greeting}} as the only placeholder (e.g. "Hi Sarah,").
+Writes content/outreach/<name>.html. Placeholders: {{greeting}} (e.g. "Hi Sarah,"), {{logo}} and {{photo}}.
+When sending through the Gmail API, images must be inline attachments:
+{{logo}} -> cid:att0 (images/logo.jpeg), {{photo}} -> cid:att1 (images/email-elizabeth.jpg).
+Colors use bgcolor attributes because the Gmail API strips CSS backgrounds.
 Run: python3 tools/build_outreach_emails.py
 """
 from pathlib import Path
@@ -27,7 +29,7 @@ def wrap(inner: str) -> str:
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f3efe8;"><tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:{INK};">
 <tr><td align="center" style="padding:22px 24px 18px;background:#ffffff;border-bottom:1px solid #ece6dc;">
-<a href="https://mindmetab.com/?{UTM}" style="text-decoration:none;"><img src="https://mindmetab.com/images/logo.jpeg" width="180" alt="Mind &amp; Metabolism Wellness Clinic" style="display:block;width:180px;height:auto;border:0;"></a>
+<a href="https://mindmetab.com/?{UTM}" style="text-decoration:none;"><img src="{{{{logo}}}}" width="180" alt="Mind &amp; Metabolism Wellness Clinic" style="display:block;width:180px;height:auto;border:0;"></a>
 </td></tr>
 {inner}
 <tr><td style="background:#1f3d33;padding:22px 32px;font-size:12px;line-height:1.6;color:#b9cfc6;">
@@ -103,8 +105,11 @@ def buttons(primary="Refer a Patient"):
 
 
 def sign(line):
-    return f"""<tr><td style="padding:0 32px 30px;font-size:15px;line-height:1.6;color:{BODY};"><p style="margin:0;">{line}</p>
-<p style="margin:14px 0 0;"><strong style="color:{INK};">The Mind &amp; Metabolism Team</strong><br><span style="color:#5c6b66;">Lead provider: Elizabeth Calfos, DNP, PMHNP-BC</span></p></td></tr>"""
+    return f"""<tr><td style="padding:0 32px 30px;font-size:15px;line-height:1.6;color:{BODY};"><p style="margin:0 0 18px;">{line}</p>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+<td width="72" valign="middle" style="padding-right:14px;"><img src="{{{{photo}}}}" width="64" height="64" alt="Elizabeth Calfos" style="display:block;width:64px;height:64px;border-radius:50%;border:0;"></td>
+<td valign="middle" style="font-size:14px;line-height:1.5;"><strong style="color:{INK};font-size:15px;">The Mind &amp; Metabolism Team</strong><br><span style="color:#5c6b66;">Lead provider: Elizabeth Calfos, DNP, PMHNP-BC</span><br><a href="tel:2535255536" style="color:{GREEN};text-decoration:none;">(253) 525-5536</a></td>
+</tr></table></td></tr>"""
 
 
 LINK = f'<a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/referrals</a>'
@@ -169,9 +174,38 @@ EMAILS = {
 }
 
 
+def harden(html: str) -> str:
+    """Make colors survive strict email sanitizers (Gmail API strips CSS backgrounds).
+
+    - drop gradients
+    - every `background:#hex` becomes `background-color:#hex` plus a bgcolor="#hex" attribute
+    """
+    import re
+    html = re.sub(r"background-image:linear-gradient\([^;]*\);", "", html)
+
+    def fix(m):
+        tag, attrs = m.group(1), m.group(2)
+        sm = re.search(r'style="([^"]*)"', attrs)
+        if not sm:
+            return m.group(0)
+        style = sm.group(1)
+        bm = re.search(r"background(?:-color)?:(#[0-9a-fA-F]{3,6})", style)
+        if not bm:
+            return m.group(0)
+        color = bm.group(1)
+        style2 = re.sub(r"background:(#[0-9a-fA-F]{3,6})", r"background-color:\1", style)
+        attrs2 = attrs.replace(sm.group(0), f'style="{style2}"')
+        if tag in ("td", "table") and "bgcolor=" not in attrs2:
+            attrs2 += f' bgcolor="{color}"'
+        return f"<{tag}{attrs2}>"
+
+    return re.sub(r"<(td|table|div|span|p|a)(\s[^>]*)>", fix, html)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for name, html in EMAILS.items():
+        html = harden(html)
         (OUT / f"{name}.html").write_text(html)
     (OUT / "subjects.txt").write_text("".join(f"{k}: {v}\n" for k, v in SUBJECTS.items()))
     print("built", list(EMAILS))
