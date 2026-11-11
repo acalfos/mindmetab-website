@@ -16,6 +16,6 @@ The owner approved the versions in `approved/`. Send ONLY these. Do not redesign
 4. Images go as inline attachments, in this order: att0 = `images/logo.jpeg`, att1 = `images/email-elizabeth.jpg`.
    Render with `python3 tools/outreach_render.py <name> "Hi Sarah,"` (gives cid:att0 / cid:att1).
 5. Before calling anything "ready", open the received email in a real inbox and check the header color, logo, photo and footer.
-6. Test or preview emails go ONLY to acalfos2@gmail.com. Never to calfose@mindmetab.com.
+6. Test or preview emails go ONLY to the owner's personal Gmail (address is in the private task instructions, not here). Never to calfose@mindmetab.com.
 7. One recipient per email. No CC, no BCC.
 8. "Refer a Patient" links go to `referrals.html#referral-form`.

@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "content/outreach"
 UTM = "utm_source=referral_email&amp;utm_medium=email"
-REFER = f"https://mindmetab.com/referrals.html?{UTM}#referral-form"
+REFER = "https://mindmetab.com/refer.html"
 GREEN, GREEN2, GOLD, INK, BODY = "#37725f", "#37725f", "#f2b544", "#1f2a27", "#33403c"
 
 SUBJECTS = {
@@ -29,12 +29,12 @@ def wrap(inner: str) -> str:
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f3efe8;"><tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:16px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:{INK};">
 <tr><td align="center" style="padding:22px 24px 18px;background:#ffffff;border-bottom:1px solid #ece6dc;">
-<a href="https://mindmetab.com/?{UTM}" style="text-decoration:none;"><img src="{{{{logo}}}}" width="180" alt="Mind &amp; Metabolism Wellness Clinic" style="display:block;width:180px;height:auto;border:0;"></a>
+<a href="https://mindmetab.com/" style="text-decoration:none;"><img src="{{{{logo}}}}" width="180" alt="Mind &amp; Metabolism Wellness Clinic" style="display:block;width:180px;height:auto;border:0;"></a>
 </td></tr>
 {inner}
 <tr><td style="background:#37725f;padding:22px 32px;font-size:12px;line-height:1.6;color:#e3efe9;">
 <p style="margin:0 0 6px;color:#ffffff;font-weight:bold;">Mind &amp; Metabolism Wellness Clinic</p>
-<p style="margin:0;"><a href="https://maps.google.com/?q=5515+Steilacoom+Blvd+SW+Suite+127+Lakewood+WA+98499" style="color:#ffffff;text-decoration:none;">5515 Steilacoom Blvd SW, Suite 127, Lakewood, WA 98499</a><br><a href="tel:2535255536" style="color:#ffffff;text-decoration:none;">(253) 525-5536</a> &nbsp;|&nbsp; <a href="mailto:info@mindmetab.com" style="color:#ffffff;">info@mindmetab.com</a> &nbsp;|&nbsp; <a href="https://mindmetab.com/?{UTM}" style="color:#ffffff;">mindmetab.com</a></p>
+<p style="margin:0;"><a href="https://maps.google.com/?q=5515+Steilacoom+Blvd+SW+Suite+127+Lakewood+WA+98499" style="color:#ffffff;text-decoration:none;">5515 Steilacoom Blvd SW, Suite 127, Lakewood, WA 98499</a><br><a href="tel:2535255536" style="color:#ffffff;text-decoration:none;">(253) 525-5536</a> &nbsp;|&nbsp; <a href="mailto:info@mindmetab.com" style="color:#ffffff;">info@mindmetab.com</a> &nbsp;|&nbsp; <a href="https://mindmetab.com/" style="color:#ffffff;">mindmetab.com</a></p>
 <p style="margin:12px 0 0;color:#cfe2da;">Please don't include patient health details in a reply to this email. Use the secure referral form instead. Prefer not to hear from us? Reply "remove" and we won't email you again.</p>
 </td></tr>
 </table></td></tr></table>
@@ -55,7 +55,7 @@ def hero(eyebrow, title, sub, button=True, color_from=GREEN, color_to=GREEN2):
 def stats():
     cell = lambda big, small, last=False: f'<td width="33%" align="center" style="padding:18px 8px;{"" if last else "border-right:1px solid #d3e2dc;"}"><p style="margin:0;font-size:20px;font-weight:bold;color:{GREEN};">{big}</p><p style="margin:4px 0 0;font-size:12px;color:#4d5d58;">{small}</p></td>'
     return f"""<tr><td style="padding:0;background:#e8f0ed;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-{cell("1 to 2 days", "to a first visit, usually")}{cell("Statewide", "telehealth across WA")}{cell("Ages 13+", "teens and adults", True)}
+{cell("1 to 2 days", "usual wait for a first visit")}{cell("Statewide", "telehealth across WA")}{cell("Ages 13+", "teens and adults", True)}
 </tr></table></td></tr>"""
 
 
@@ -74,7 +74,7 @@ def treat():
             ("Schizophrenia and psychosis", "PTSD and trauma"), ("OCD", "Postpartum depression"),
             ("Insomnia and sleep problems", "Dementia-related behavior changes")]
     trs = "".join(f'<tr><td width="50%" style="padding:6px 0;">{ck}{a}</td><td width="50%" style="padding:6px 0;">{ck}{b}</td></tr>' for a, b in rows)
-    more = f'<p style="margin:10px 0 0;font-size:13px;color:#5c6b66;">Plus full psychiatric evaluations and ongoing medication management. <a href="https://mindmetab.com/?{UTM}#services" style="color:{GREEN};font-weight:bold;">See all services</a></p>'
+    more = f'<p style="margin:10px 0 0;font-size:13px;color:#5c6b66;">We also provide full psychiatric evaluations and ongoing medication management. <a href="https://mindmetab.com/" style="color:{GREEN};font-weight:bold;">See all services</a></p>'
     return f'<tr><td style="padding:8px 32px 6px;">{label("Conditions we treat")}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px;color:{BODY};">{trs}</table>{more}</td></tr>'
 
 
@@ -83,7 +83,7 @@ def insurance():
     pills = "".join(f'<span style="display:inline-block;background:#ffffff;border:1px solid #ead7a8;border-radius:100px;padding:2px 12px;margin:0 4px 6px 0;">{p}</span>' for p in plans)
     return f"""<tr><td style="padding:22px 32px 8px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#fdf6e7;border:1px solid #f2dfb0;border-radius:12px;"><tr><td style="padding:18px 20px;">
 {label("In network with", "#9a6a12")}<p style="margin:0;font-size:14px;line-height:2.1;color:{BODY};">{pills}</p>
-<p style="margin:8px 0 0;font-size:13px;"><a href="https://mindmetab.com/insurance.html?{UTM}" style="color:#9a6a12;">See the full list of plans</a></p>
+<p style="margin:8px 0 0;font-size:13px;"><a href="https://mindmetab.com/insurance.html" style="color:#9a6a12;">See the full list of plans</a></p>
 </td></tr></table></td></tr>"""
 
 
@@ -112,7 +112,7 @@ def sign(line):
 </tr></table></td></tr>"""
 
 
-LINK = f'<a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/referrals</a>'
+LINK = f'<a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/refer</a>'
 
 EMAILS = {
     "referral-email": wrap(
@@ -120,7 +120,7 @@ EMAILS = {
              "Medication evaluations and ongoing medication management for teens and adults across Washington State.")
         + stats()
         + paras("{{greeting}}",
-                "I'm reaching out from Mind &amp; Metabolism, a psychiatric practice in Lakewood that sees patients by secure telehealth anywhere in Washington, with in-person visits in Lakewood. If you have patients who could use a medication evaluation, we'd be glad to help, and we'll keep you in the loop with their consent.")
+                "We're reaching out from Mind &amp; Metabolism, a psychiatric practice based in Lakewood. We see patients by secure telehealth anywhere in Washington, with in-person visits at our Lakewood office. If you have patients who could use a medication evaluation, we'd be glad to help, and we'll keep you in the loop with their consent.")
         + treat() + insurance()
         + steps([f"Send the short referral form at {LINK}. It takes about two minutes.",
                  "We contact your patient within one business day and verify their insurance.",
@@ -133,12 +133,12 @@ EMAILS = {
         hero("", "Still here when your patients need us",
              "A quick follow-up on psychiatric referrals in Washington.", button=False)
         + paras("{{greeting}}",
-                "I wanted to follow up on my note from last week. If any of your patients could use a psychiatric evaluation or help with medication, we're accepting new patients now and can usually see them within 1 to 2 days.",
+                "We wanted to follow up on our note from last week. If any of your patients could use a psychiatric evaluation or help with medication, we're accepting new patients now and can usually see them within 1 to 2 days.",
                 "We treat depression, anxiety, ADHD, bipolar disorder, schizophrenia and psychosis, PTSD, OCD, postpartum depression, insomnia and more, for teens and adults.")
         + f"""<tr><td style="padding:4px 32px 10px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td width="33%" align="center" valign="top" style="padding:14px 6px;background:#e8f0ed;border-radius:12px;"><p style="margin:0;font-size:22px;">&#9200;</p><p style="margin:6px 0 0;font-size:13px;font-weight:bold;color:{GREEN};">Seen in 1 to 2 days</p></td>
 <td width="8"></td>
-<td width="33%" align="center" valign="top" style="padding:14px 6px;background:#fdf6e7;border-radius:12px;"><p style="margin:0;font-size:22px;">&#128179;</p><p style="margin:6px 0 0;font-size:13px;font-weight:bold;color:#9a6a12;">Most plans incl. Apple Health</p></td>
+<td width="33%" align="center" valign="top" style="padding:14px 6px;background:#fdf6e7;border-radius:12px;"><p style="margin:0;font-size:22px;">&#128179;</p><p style="margin:6px 0 0;font-size:13px;font-weight:bold;color:#9a6a12;">Most plans, including Apple Health</p></td>
 <td width="8"></td>
 <td width="33%" align="center" valign="top" style="padding:14px 6px;background:#e8f0ed;border-radius:12px;"><p style="margin:0;font-size:22px;">&#128187;</p><p style="margin:6px 0 0;font-size:13px;font-weight:bold;color:{GREEN};">Telehealth statewide</p></td></tr>
 </table></td></tr>"""
@@ -151,9 +151,9 @@ EMAILS = {
              "No reply needed. We just want to be easy to find when the timing is right.", button=False,
              color_from=GREEN, color_to=GREEN)
         + paras("{{greeting}}",
-                "This is my last note for now. I know inboxes are full, so I'll keep it short: whenever a patient needs a psychiatric evaluation or medication management, for anything from depression and ADHD to bipolar disorder or schizophrenia, Mind &amp; Metabolism is here.")
+                "This is our last note for now. We know inboxes are full, so we'll keep it short: whenever a patient needs a psychiatric evaluation or medication management, for anything from depression and ADHD to bipolar disorder or schizophrenia, Mind &amp; Metabolism is here.")
         + callout(f"""<p style="margin:0 0 6px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:{GREEN};font-weight:bold;">Save for later</p>
-<p style="margin:0;font-size:16px;"><a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/referrals</a></p>
+<p style="margin:0;font-size:16px;"><a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/refer</a></p>
 <p style="margin:6px 0 0;">Secure two-minute referral form. First visit usually within 1 to 2 days. Aetna, UnitedHealthcare, Cigna, Premera, Regence, Medicare and Apple Health plans accepted.</p>""", top=4)
         + buttons()
         + sign("Wishing you and your practice all the best.")
