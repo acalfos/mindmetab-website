@@ -737,7 +737,12 @@ document.body.style.overflow = '';
       var pg=f.querySelector('input[name="entry.PAGE"]'); if(pg) pg.name=pg.dataset.entry;
       fetch(mmUrl(f),{method:'POST',mode:'no-cors',body:mmData(f)})
         .then(function(){ f.style.display='none'; document.getElementById(successId).style.display='block';
-          if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname,ad_source:window.mmSrc||''}); })
+          if(window.gtag) gtag('event', formId==='referral-form-el'?'referral_submitted':'contact_form_submitted',{link_location:location.pathname,ad_source:window.mmSrc||''});
+          if(formId==='referral-form-el'){ /* thank-you queue: referring provider only, never patient info */
+            var q=new FormData(), g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value:'';};
+            q.append('entry.2076218254',g('entry.731007518')); q.append('entry.1175810307',g('entry.38989591')); q.append('entry.1075395586',g('entry.1715043475'));
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLSfGS1B3HZL8EY0XgRN0WZrulVfjY5mH-oXWCgd-q2GzXPjbuA/formResponse',{method:'POST',mode:'no-cors',body:q}).catch(function(){});
+          } })
         .catch(function(){ if(btn){btn.disabled=false;btn.textContent='Try again';}
           alertBox(f); });
     });
