@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "content/outreach"
 UTM = "utm_source=referral_email&amp;utm_medium=email"
-REFER = "https://mindmetab.com/refer.html"
+REFER = "https://mindmetab.com/referrals.html#referral-form"
 GREEN, GREEN2, GOLD, INK, BODY = "#37725f", "#37725f", "#f2b544", "#1f2a27", "#33403c"
 
 SUBJECTS = {
@@ -112,7 +112,7 @@ def sign(line):
 </tr></table></td></tr>"""
 
 
-LINK = f'<a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/refer</a>'
+LINK = f'<a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/referrals</a>'
 
 EMAILS = {
     "referral-email": wrap(
@@ -153,7 +153,7 @@ EMAILS = {
         + paras("{{greeting}}",
                 "This is our last note for now. We know inboxes are full, so we'll keep it short: whenever a patient needs a psychiatric evaluation or medication management, for anything from depression and ADHD to bipolar disorder or schizophrenia, Mind &amp; Metabolism is here.")
         + callout(f"""<p style="margin:0 0 6px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:{GREEN};font-weight:bold;">Save for later</p>
-<p style="margin:0;font-size:16px;"><a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/refer</a></p>
+<p style="margin:0;font-size:16px;"><a href="{REFER}" style="color:{GREEN};font-weight:bold;">mindmetab.com/referrals</a></p>
 <p style="margin:6px 0 0;">Secure two-minute referral form. First visit usually within 1 to 2 days. Aetna, UnitedHealthcare, Cigna, Premera, Regence, Medicare and Apple Health plans accepted.</p>""", top=4)
         + buttons()
         + sign("Wishing you and your practice all the best.")

@@ -10,7 +10,7 @@ The owner approved the versions in `approved/`. Send ONLY these. Do not redesign
 - Source of truth for edits: `tools/build_outreach_emails.py`. After any edit, rebuild, preview, get approval, then copy into `approved/`.
 
 ## Rules that prevent the "all white email" mistake
-1. Send through the Gmail connector for info@mindmetab.com. It STRIPS CSS backgrounds and external images.
+1. NEVER send outreach through the Gmail connector: it rewrites every link into google.com/url?q=... and recipients get a Google "Redirect Notice" page (found Nov 12, 2026). Outreach and thank-yous are sent by the Apps Script in `apps-script/Code.gs` (installed under info@mindmetab.com). Rebuild it with `python3 tools/build_apps_script.py` after any template change.
 2. Colors must use `bgcolor="..."` attributes plus `background-color` (the builder does this). No gradients.
 3. One brand green everywhere: `#37725f`. Gold button `#f2b544`. Nothing darker.
 4. Images go as inline attachments, in this order: att0 = `images/logo.jpeg`, att1 = `images/email-elizabeth.jpg`.
@@ -18,4 +18,4 @@ The owner approved the versions in `approved/`. Send ONLY these. Do not redesign
 5. Before calling anything "ready", open the received email in a real inbox and check the header color, logo, photo and footer.
 6. Test or preview emails go ONLY to the owner's personal Gmail (address is in the private task instructions, not here). Never to calfose@mindmetab.com.
 7. One recipient per email. No CC, no BCC.
-8. "Refer a Patient" links go to `referrals.html#referral-form`.
+8. "Refer a Patient" links go straight to `https://mindmetab.com/referrals.html#referral-form` (not the /refer.html forwarding page).
