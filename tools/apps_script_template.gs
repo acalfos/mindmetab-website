@@ -10,6 +10,9 @@
  *   runCampaign()  sends today's campaign emails now (it also runs by itself each weekday morning)
  *   stopAll()      turns the automatic schedule off
  *
+ * New providers: add rows to the "Campaign" tab by hand, or drop a CSV named outreach-queue-YYYY-MM-DD.csv
+ * (columns: name,practice,email,city,provider_type,source_url) into the Drive queue folder. Each CSV is imported once.
+ *
  * Built by tools/build_apps_script.py from content/outreach/approved/. Do not edit the templates here.
  */
 
@@ -25,6 +28,7 @@ var CONFIG = {
   FOLLOWUP1_DAYS: 7,                           // follow-up 1 this many days after the first email
   FOLLOWUP2_DAYS: 14,                          // follow-up 2 this many days after follow-up 1
   THANKYOU_LOOKBACK_DAYS: 3,
+  QUEUE_FOLDER_ID: '1ICMmm1uJ0eoXu_viOIrvNPJFMfnOZnCP', // Drive folder where new provider lists (outreach-queue-*.csv) are dropped
   RUN_HOUR: 9,                                 // weekday morning send time (script time zone)
   LOGO_URL: 'https://mindmetab.com/images/logo.jpeg',
   PHOTO_URL: 'https://mindmetab.com/images/email-elizabeth.jpg'
@@ -115,7 +119,9 @@ function runCampaign() {
     var day = new Date().getDay();
     if (day === 0 || day === 6) return;   // weekdays only
     var c = SpreadsheetApp.openById(CONFIG.SHEET_ID).getSheetByName(CONFIG.CAMPAIGN_TAB);
-    if (!c || c.getLastRow() < 2) return;
+    if (!c) throw new Error('Run setup() first.');
+    var imported = importQueue_(c);
+    if (c.getLastRow() < 2) return;
     var data = c.getRange(2, 1, c.getLastRow() - 1, CAMPAIGN_HEADERS.length).getValues();
     var now = new Date(), report = { replied: [], removed: [], email1: 0, fu1: 0, fu2: 0, skipped: [] };
     var seen = {}, intros = 0;
@@ -156,16 +162,43 @@ function runCampaign() {
       SpreadsheetApp.flush();
     });
 
-    var lines = ['First emails sent: ' + report.email1, 'Follow-up 1 sent: ' + report.fu1, 'Follow-up 2 sent: ' + report.fu2];
+    var lines = [];
+    if (imported) lines.push('New providers added to the Campaign tab: ' + imported);
+    lines.push('First emails sent: ' + report.email1, 'Follow-up 1 sent: ' + report.fu1, 'Follow-up 2 sent: ' + report.fu2);
     if (report.replied.length) lines.push('\nReplied (follow-ups stopped, check the inbox):\n- ' + report.replied.join('\n- '));
     if (report.removed.length) lines.push('\nAsked to be removed (stopped):\n- ' + report.removed.join('\n- '));
     if (report.skipped.length) lines.push('\nSkipped:\n- ' + report.skipped.join('\n- '));
-    if (report.email1 + report.fu1 + report.fu2 + report.replied.length + report.removed.length + report.skipped.length) {
+    if (imported + report.email1 + report.fu1 + report.fu2 + report.replied.length + report.removed.length + report.skipped.length) {
       summary_('Outreach update ' + shortDate_(), lines.join('\n'));
     }
   } finally {
     lock.releaseLock();
   }
+}
+
+// Adds providers from new outreach-queue-*.csv files in the Drive queue folder (each file once, no duplicate emails).
+function importQueue_(c) {
+  if (!CONFIG.QUEUE_FOLDER_ID) return 0;
+  var props = PropertiesService.getScriptProperties();
+  var existing = {};
+  if (c.getLastRow() > 1) c.getRange(2, COL.EMAIL, c.getLastRow() - 1, 1).getValues().forEach(function (r) { existing[String(r[0]).trim().toLowerCase()] = true; });
+  var files = DriveApp.getFolderById(CONFIG.QUEUE_FOLDER_ID).getFiles(), added = 0;
+  while (files.hasNext()) {
+    var f = files.next();
+    if (!/^outreach-queue-.*\.csv$/i.test(f.getName()) || props.getProperty('imported_' + f.getId())) continue;
+    var rows = Utilities.parseCsv(f.getBlob().getDataAsString());
+    var head = rows.shift().map(function (h) { return String(h).trim().toLowerCase(); });
+    var ix = function (k) { return head.indexOf(k); };
+    rows.forEach(function (r) {
+      var email = String(r[ix('email')] || '').trim().toLowerCase();
+      if (!validEmail_(email) || existing[email] || CONFIG.NEVER_EMAIL.indexOf(email) >= 0) return;
+      var notes = [r[ix('city')], r[ix('provider_type')], r[ix('source_url')]].filter(function (x) { return x; }).join(' | ');
+      c.appendRow([r[ix('name')] || '', r[ix('practice')] || '', email, '', '', '', '', notes]);
+      existing[email] = true; added++;
+    });
+    props.setProperty('imported_' + f.getId(), new Date().toISOString());
+  }
+  return added;
 }
 
 // ---------- helpers ----------
