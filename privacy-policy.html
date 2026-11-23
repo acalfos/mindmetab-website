@@ -51,7 +51,7 @@ s=q.get('msclkid')?'Bing ad':(q.get('gclid')||q.get('gbraid')||q.get('wbraid'))?
 if(c)s+=' ('+c+')';s+=', landed on '+location.pathname;try{sessionStorage.setItem('mmSrc',s)}catch(e){}}
 window.mmSrc=s;})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
-if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
+if((h.indexOf('onlineintake')>-1||h.indexOf('/book.html')>-1))gtag('event','request_care_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
 else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
 else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname,ad_source:window.mmSrc||''});});
 </script>
@@ -80,11 +80,11 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   <h2>Information We Collect</h2>
   <p>When you visit our website, we may collect:</p>
   <ul>
-    <li>Contact information you submit voluntarily, such as your name and email address</li>
+    <li>Contact information you submit voluntarily, such as your name, date of birth, address, phone number, email address, and insurance plan and member ID</li>
     <li>Information you share when requesting care or sending us a message</li>
     <li>Basic usage data such as pages visited and time spent on the site (collected via standard web analytics tools)</li>
   </ul>
-  <p>Contact and referral forms on this website are submitted securely to Google Workspace under a HIPAA Business Associate Agreement and are used only to contact you or coordinate care. We do not use this information for advertising.</p>
+  <p>Appointment request, contact and referral forms on this website are submitted securely to Google Workspace under a HIPAA Business Associate Agreement and are used only to contact you or coordinate care. We do not use this information for advertising.</p>
   <p>We do not collect detailed health records through this website. Clinical information is collected through our secure patient portal, hosted by AdvancedMD, which has its own privacy protections.</p>
 
   <h2>How We Use Your Information</h2>
