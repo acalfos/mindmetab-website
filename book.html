@@ -247,7 +247,7 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
         <div class="full"><label for="bk-name">Full legal name *</label><input id="bk-name" type="text" name="entry.478276111" required autocomplete="name" /></div>
         <div><label for="bk-dob">Date of birth *</label><input id="bk-dob" type="date" data-k="Date of birth" required autocomplete="bday" /></div>
         <div><label for="bk-phone">Phone *</label><input id="bk-phone" type="tel" name="entry.1531743765" required autocomplete="tel" placeholder="Best number to reach you" /></div>
-        <div class="full"><label for="bk-email">Email <span>(optional)</span></label><input id="bk-email" type="email" name="entry.1039918451" autocomplete="email" placeholder="you@example.com" /></div>
+        <div class="full"><label for="bk-email">Email *</label><input id="bk-email" type="email" name="entry.1039918451" required autocomplete="email" placeholder="you@example.com" /></div>
         <div class="full"><label for="bk-street">Street address *</label><input id="bk-street" type="text" data-k="Street" required autocomplete="street-address" placeholder="Street and apartment or unit" /></div>
         <div><label for="bk-city">City *</label><input id="bk-city" type="text" data-k="City" required autocomplete="address-level2" /></div>
         <div class="bk-grid" style="gap:12px;"><div><label for="bk-state">State</label><input id="bk-state" type="text" data-k="State" value="WA" autocomplete="address-level1" /></div><div><label for="bk-zip">ZIP *</label><input id="bk-zip" type="text" data-k="ZIP" required inputmode="numeric" autocomplete="postal-code" /></div></div>
@@ -351,10 +351,11 @@ else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:locat
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var err=document.getElementById('bk-error'); err.style.display='none';
-    var need=[['bk-name','full name'],['bk-dob','date of birth'],['bk-phone','phone'],['bk-street','street address'],['bk-city','city'],['bk-zip','ZIP'],['bk-plan','insurance plan'],['bk-reason','what you are looking for']];
+    var need=[['bk-name','full name'],['bk-dob','date of birth'],['bk-phone','phone'],['bk-email','email'],['bk-street','street address'],['bk-city','city'],['bk-zip','ZIP'],['bk-plan','insurance plan'],['bk-reason','what you are looking for']];
     if(plan.value==='Other plan') need.push(['bk-other','plan name']);
     if(plan.value!=='Self-pay (no insurance)') need.push(['bk-member','member ID']);
     var miss=need.filter(function(n){return !v(n[0]);});
+    var em=v('bk-email'); if(em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) && miss.indexOf('bk-email')<0) miss.push(['bk-email','a valid email']);
     if(miss.length){ err.textContent='Please fill in: '+miss.map(function(n){return n[1];}).join(', ')+'.'; err.style.display='block'; document.getElementById(miss[0][0]).focus(); return; }
     if(window.mmBot && mmBot(f)){ f.style.display='none'; document.getElementById('form-success').style.display='block'; return; }
     var planName = plan.value==='Other plan' ? 'Other: '+v('bk-other') : plan.value;
