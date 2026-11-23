@@ -53,7 +53,7 @@ s=q.get('msclkid')?'Bing ad':(q.get('gclid')||q.get('gbraid')||q.get('wbraid'))?
 if(c)s+=' ('+c+')';s+=', landed on '+location.pathname;try{sessionStorage.setItem('mmSrc',s)}catch(e){}}
 window.mmSrc=s;})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
-if(h.indexOf('onlineintake')>-1)gtag('event','request_care_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
+if((h.indexOf('onlineintake')>-1||h.indexOf('/book.html')>-1))gtag('event','request_care_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
 else if(h.indexOf('tel:')===0)gtag('event','phone_click',{link_location:location.pathname,ad_source:window.mmSrc||''});
 else if(h.indexOf('mailto:')===0)gtag('event','email_click',{link_location:location.pathname,ad_source:window.mmSrc||''});});
 </script>

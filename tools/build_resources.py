@@ -11,7 +11,7 @@ import html, json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://mindmetab.com/"
-INTAKE = "https://patientportal.advancedmd.com/163633/onlineintake"
+INTAKE = "/book.html"
 SERVICES = {
     "psychiatric-evaluation": ("psychiatric-evaluation.html", "Psychiatric Evaluation"),
     "medication-management": ("medication-management.html", "Medication Management"),
@@ -104,7 +104,7 @@ def main():
   <div class="article-cta">
     <h3>Ready to talk with someone?</h3>
     <p>Our board-certified psychiatric providers see teens and adults across Washington State by telehealth, with limited in-person visits in Lakewood. Most major insurance accepted.</p>
-    <a href="{INTAKE}" target="_blank" rel="noopener" class="btn-white">Book Now</a>
+    <a href="{INTAKE}" class="btn-white">Book Now</a>
     <p style="margin:16px 0 0;font-size:14px;"><a href="/{primary_href}" style="color:#fff;">{primary_name}</a> · <a href="tel:2535255536" style="color:#fff;">Call (253) 525-5536</a></p>
   </div>
 </article>'''
@@ -132,7 +132,7 @@ def main():
   <div class="article-cta">
     <h3>Have a question we haven't covered?</h3>
     <p>Call us or book a visit. Telehealth anywhere in Washington State.</p>
-    <a href="{INTAKE}" target="_blank" rel="noopener" class="btn-white">Book Now</a>
+    <a href="{INTAKE}" class="btn-white">Book Now</a>
   </div>
 </article>'''
     hub_url = BASE + "resources/"
