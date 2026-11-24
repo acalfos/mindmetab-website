@@ -14,9 +14,9 @@ The weekly automation takes the first unchecked topic, writes it, and checks it 
 - [x] Seasonal depression in the Pacific Northwest: what helps
 - [x] Panic attack or heart problem? What to know
 - [x] Bipolar disorder vs. depression: why the difference matters
+- [x] What medication management visits are actually like
 
 ## Up next
-- [ ] What medication management visits are actually like
 - [ ] PTSD after a car accident or medical event
 - [ ] OCD is not just being neat: common types people don't recognize
 - [ ] Sleep and mental health: why insomnia is often the first sign

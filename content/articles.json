@@ -1,5 +1,22 @@
 [
   {
+    "slug": "medication-management-visits-what-to-expect",
+    "title": "What Medication Management Visits Are Actually Like",
+    "description": "What happens at a psychiatric medication follow up visit, how often visits happen, and what to bring up so your plan fits you.",
+    "tag": "Medication Management",
+    "summary": "What follow up visits cover, how often they happen, and what to share.",
+    "date": "2026-11-24",
+    "read_minutes": 4,
+    "services": [
+      "medication-management",
+      "psychiatric-evaluation",
+      "stimulant",
+      "telehealth"
+    ],
+    "reviewed_by": "",
+    "gbp_post": "Follow up visits for psychiatric medication are shorter than a first appointment, but they matter just as much. Our new article walks through what a typical medication management visit covers, how often visits usually happen, and what is worth bringing up. Telehealth visits are available for teens and adults anywhere in Washington."
+  },
+  {
     "slug": "bipolar-disorder-vs-depression",
     "title": "Bipolar Disorder vs. Depression: Why the Difference Matters",
     "description": "Bipolar disorder and depression can look alike. Learn what sets them apart, why it changes treatment, and what to tell your provider.",

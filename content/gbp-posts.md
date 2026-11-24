@@ -3,6 +3,7 @@
 One post per week, linking to an article. Keep posts short, natural, no long dashes, no health claims, no patient details. Button: "Learn more" with the article link.
 
 ## Shared (via Zapier feed from 2026-11-08: RSS resources/feed.xml → Google Business Profile, Learn more button)
+- 2026-11-24: resources/medication-management-visits-what-to-expect.html (queued via feed.xml)
 - 2026-11-17: resources/bipolar-disorder-vs-depression.html (queued via feed.xml)
 - 2026-11-10: resources/panic-attack-or-heart-problem.html (queued via feed.xml)
 - 2026-11-08: resources/seasonal-depression-pacific-northwest.html (Zapier test post)
