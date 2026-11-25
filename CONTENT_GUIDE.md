@@ -2,6 +2,19 @@
 
 Every article on mindmetab.com follows these rules. The weekly article automation reads this file first.
 
+## Positioning
+Mind & Metabolism is a comprehensive psychiatric practice focused on psychiatric evaluations and medication management. ADHD is one service among many, not the practice's specialty. Describe the practice around:
+- Comprehensive psychiatric evaluations and diagnostic assessments
+- Psychiatric medication management
+- Depression and mood disorders
+- Anxiety and panic disorders
+- Bipolar disorder
+- ADHD
+- OCD, PTSD, and other psychiatric conditions
+- Ongoing psychiatric care and follow-up
+
+Don't describe the practice as ADHD-focused or an ADHD clinic. When choosing or writing topics, keep a broad mix of conditions so ADHD doesn't dominate the articles or the Google posts.
+
 ## Voice
 - Write like a calm, experienced clinician talking to a patient across the desk. Warm, direct, plain English.
 - Use contractions (you're, we'll, it's). Short paragraphs. Short sentences mixed with longer ones.
